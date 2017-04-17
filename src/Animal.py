@@ -149,7 +149,7 @@ class Animal:
             return self.__color__
         
 class Magic:
-    def magic_word(word):
+    def magic_word(self, word):
         print("abracada " + word)
             
 
@@ -183,8 +183,9 @@ class Bird(Animal, Magic):
         print("piiip")        
 
 
-
+# Custom Class tests
 thunder = Bird("Thunder", "yellow")
+thunder.magic_word('... bra!')
 
 animal = Animal("zet", "brown")
 print (str(animal))
@@ -193,3 +194,24 @@ dog = Dog("Ford", "brown")
 print(dog.name)
 dog.bark()
 
+
+# Built-In Class Attributes
+"""
+https://www.tutorialspoint.com/python/python_classes_objects.htm
+
+    __dict__: Dictionary containing the class's namespace.
+
+    __doc__: Class documentation string or none, if undefined.
+
+    __name__: Class name.
+
+    __module__: Module name in which the class is defined. This attribute is "__main__" in interactive mode.
+
+    __bases__: A possibly empty tuple containing the base classes, in the order of their occurrence in the base class list.
+
+"""
+print ("Animal.__doc__:" + str(Animal.__doc__))
+print ("Animal.__name__:" + Animal.__name__)
+print ("Animal.__module__:", str(Animal.__module__))
+print ("Animal.__bases__:" + str(Animal.__bases__))
+print ("Animal.__dict__:" + str(Animal.__dict__))
