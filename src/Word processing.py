@@ -46,7 +46,6 @@ text2 = (
     )
 
 
-
 def count_words(text):
     """
     Count the number of times each word occurs in text (str). Skip punctuation. 
