@@ -125,6 +125,10 @@ class Test:
 
 ### Example ###
 class Animal:
+    """
+    Test class to create an animal class in python
+
+    """
     def __init__(self, name, color):
         """
         to initialize the Animal Class
@@ -138,7 +142,7 @@ class Animal:
         Return a string with the animal characteristics
 
         """
-        return "%s of color %s" % (self.__name__, self.__color__)
+        return "{0} of color {1}".format(self.__name__, self.__color__)
 
     def __getattr__(self, key):
         if key == 'name':
@@ -148,7 +152,18 @@ class Animal:
             return self.__color__
 
 class Magic:
-    def magic_word(self, word):
+    """
+    Magical test class
+    """
+    def __init__(self, magic):
+        """
+        to initialize the magic Class
+
+        """
+        self.__magic__ = magic    
+    
+    @staticmethod # Means that it doesn't use any attributes of the class
+    def magic_word(word):
         print("abracada " + word)
 
 
@@ -162,7 +177,8 @@ class Cat(Animal):
     def __init__(self, name, color):
         super().__init__(self, name, color)
 
-    def purr(self):
+    @staticmethod
+    def purr():
         print("Purr...")
 
 class Dog(Animal):
@@ -170,7 +186,8 @@ class Dog(Animal):
     Used to implement Dog's methods
 
     """
-    def bark(self):
+    @staticmethod
+    def bark():
         print("Woof!")
 
 class Bird(Animal, Magic):
@@ -178,7 +195,8 @@ class Bird(Animal, Magic):
     Used to implement Bird's methods inheriting Animal and Magic methods
 
     """
-    def tweet(self):
+    @staticmethod
+    def tweet():
         print("piiip")
 
 
@@ -196,17 +214,17 @@ dog.bark()
 
 # Built-In Class Attributes
 """
-    __dict__: Dictionary containing the class's namespace.
+__dict__: Dictionary containing the class's namespace.
 
-    __doc__: Class documentation string or none, if undefined.
+__doc__: Class documentation string or none, if undefined.
 
-    __name__: Class name.
+__name__: Class name.
 
-    __module__: Module name in which the class is defined. This attribute is
-    "__main__" in interactive mode.
+__module__: Module name in which the class is defined. This attribute is
+"__main__" in interactive mode.
 
-    __bases__: A possibly empty tuple containing the base classes,
-    in the order of their occurrence in the base class list.
+__bases__: A possibly empty tuple containing the base classes,
+in the order of their occurrence in the base class list.
 
 """
 print ("Animal.__doc__:", str(Animal.__doc__))

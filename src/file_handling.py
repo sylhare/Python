@@ -6,11 +6,10 @@ Created on Tue Apr 18 20:31:19 2017
 """
 
 import sys
-import os
 
 # Going through the list of arguments
 # python file_handling.py file_1 file_2 file_3
-for index in range(len(sys.argv)):
+for index in enumerate(sys.argv):
 
         # Ignoring script name which is  argv[0]
         if index != 0:

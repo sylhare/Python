@@ -68,9 +68,9 @@ def rm_trailing_space(path):
             new = [line.rstrip() for line in file]
         with open(path, 'w', encoding='utf-8') as file:
             [file.write('%s\n' % line) for line in new]
-        print("[ OK ] " + path)
+        print("[ OK ] {0}".format(path))
     except Exception as e:
-        print("[FAIL] " + path + " " + str(type(e).__name__ ))
+        print("[FAIL] {0} {1}".format(path, str(type(e).__name__ )))
 
 
 if __name__ == "__main__":
