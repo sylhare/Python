@@ -84,12 +84,12 @@ cursor.execute("""SELECT id, name, age FROM users""")
 rows = cursor.fetchall()
 for row in rows:
     print('{0} : {1} - {2}'.format(row[0], row[1], row[2]))
- 
-#Cursor work as an interator here calling fetchall() automatically   
+
+#Cursor work as an interator here calling fetchall() automatically
 cursor.execute("""SELECT id, name, age FROM users""")
 for row in cursor:
     print('{0} : {1}, {2}'.format(row[0], row[1], row[2]))
-    
+
 #To modify the input or a row
 cursor.execute("""UPDATE users SET age = ? WHERE id = 2""", (31,))
 
@@ -116,7 +116,7 @@ except Exception as e:
     # raise e
 finally:
     conn.close()
-    
+
 #==============================================================================
 # #Errors that can be trapped
 # Error

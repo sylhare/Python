@@ -124,11 +124,13 @@ class Test:
 
 
 ### Example ###
-class Animal:
+class Animal ():
     """
     Test class to create an animal class in python
 
     """
+    animal_type = "Animal"
+    
     def __init__(self, name, color):
         """
         to initialize the Animal Class
@@ -151,23 +153,25 @@ class Animal:
         if key == 'color':
             return self.__color__
 
-class Magic:
+class Magic ():
     """
     Magical test class
     """
+    magic_type = "Magic" 
+    
     def __init__(self, magic):
         """
         to initialize the magic Class
 
         """
-        self.__magic__ = magic    
-    
+        self.__magic__ = magic
+
     @staticmethod # Means that it doesn't use any attributes of the class
     def magic_word(word):
         print("abracada " + word)
 
 
-class Cat(Animal):
+class Cat (Animal):
     """
     SubClass of Animal
     Inheriting its method
@@ -181,7 +185,7 @@ class Cat(Animal):
     def purr():
         print("Purr...")
 
-class Dog(Animal):
+class Dog (Animal):
     """
     Used to implement Dog's methods
 
@@ -190,7 +194,7 @@ class Dog(Animal):
     def bark():
         print("Woof!")
 
-class Bird(Animal, Magic):
+class Bird (Animal, Magic):
     """
     Used to implement Bird's methods inheriting Animal and Magic methods
 

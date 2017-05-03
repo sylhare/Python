@@ -34,8 +34,10 @@ def main_reboot():
 
     """
     path = os.getcwd()
-    for path, dirs, files in os.walk(path):
-        for file in files:
+    # os.walk(path) return path, dirs, fils
+    for files in os.walk(path):
+        print(files[2])
+        for file in files[2]:
             if file[-3:] == '.py':
                 rm_trailing_space(file)
 
