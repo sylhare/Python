@@ -38,6 +38,19 @@ for i in range(0, len(date)):
 #finally:
 #    f.close()
 
+
+with open("test.csv","rt") as csvfile:
+    reader = csv.reader(csvfile, delimiter=',', quoting=csv.QUOTE_ALL)
+    fieldnames = next(reader)
+    #reader = csv.DictReader(csvfile, delimiter=';', fieldnames=fieldnames)
+    for row in reader:
+        for i in range(len(row)):
+            print (fieldnames[i] + ":" + row[i])
+        for r in row:
+            print (r)
+          
+
+
 columns = defaultdict(list) # each value in each column is appended to a list
 with open("test.csv","rt") as f:
     reader = csv.DictReader(f) # read rows into a dictionary format
