@@ -2,6 +2,9 @@
 Thumbs.db
 ehthumbs.db
 
+# Mac files
+.DS_Store
+
 # Folder config file
 Desktop.ini
 
