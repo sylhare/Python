@@ -8,6 +8,11 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+# IDE
+.idea/
+*.iml
+*.xml
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
