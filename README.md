@@ -46,9 +46,18 @@ Run a python script on a command prompt:
 
 	python.exe script.py arg1
 
+### Creating Python packages
+
+A Python package is simply an organized collection of python modules. A python module is simply a single python file.
+
+To create a python package, create a directory and then add a `__init__.py` file. 
+Creating a package with `__init__.py` is all about making it easier to develop large Python projects. It provides an easy way for you to group large folders of many seperate python scripts into a single importable module.
+
 
 ### Sources
 
 - [For special methods in class](http://www.diveintopython3.net/special-method-names.html)
 - [Built in attributes](https://www.tutorialspoint.com/python/python_classes_objects.htm)
 - [Going Full Stack Python](https://www.fullstackpython.com/introduction.html)
+- [How to create a python package](http://timothybramlett.com/How_to_create_a_Python_Package_with___init__py.html)
+- [How to structure your python project](http://docs.python-guide.org/en/latest/writing/structure/)
