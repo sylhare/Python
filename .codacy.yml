@@ -1,0 +1,5 @@
+---
+exclude_paths:
+  - src/Pycharm/VenvPython2.7/venv/**
+  - src/Pycharm/VenvPython3.6/venv/**
+  - src/tdd/venv/**
