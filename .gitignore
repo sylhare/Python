@@ -5,11 +5,15 @@ ehthumbs.db
 # Mac files
 .DS_Store
 
+# Python file
+*.pyc
+src/tdd/venv/**
+
 # Folder config file
 Desktop.ini
 
 # IDE
-.idea/
+.idea/**
 *.iml
 *.xml
 
