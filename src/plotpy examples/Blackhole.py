@@ -16,19 +16,19 @@ ax = fig.gca(projection='3d')
 X = np.arange(-30, 30, 0.1)
 Y = np.arange(-30, 30, 0.1)
 X, Y = np.meshgrid(X, Y)
-Z = np.log (X**2 + Y**2)
+Z = np.log(X ** 2 + Y ** 2)
 
-#3D plot; coolwarm for the color
+# 3D plot; coolwarm for the color
 surf = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap=cm.coolwarm,
                        linewidth=0, antialiased=False)
 ax.set_zlim(0, 6)
 
-#ax.zaxis.set_major_locator(LinearLocator(10))
-#ax.zaxis.set_major_formatter(FormatStrFormatter('%.02f'))
- 
+# ax.zaxis.set_major_locator(LinearLocator(10))
+# ax.zaxis.set_major_formatter(FormatStrFormatter('%.02f'))
+
 fig.colorbar(surf, shrink=0.5, aspect=5)
- 
-#==============================================================================
+
+# ==============================================================================
 # ax.plot_surface(X, Y, Z, rstride=20, cstride=4, alpha=0.1)
 # cset = ax.contour(X, Y, Z, zdir='z', offset=-100, cmap=cm.coolwarm)
 # cset = ax.contour(X, Y, Z, zdir='x', offset=-40, cmap=cm.coolwarm)
@@ -39,6 +39,6 @@ fig.colorbar(surf, shrink=0.5, aspect=5)
 # ax.set_ylim(-40, 40)
 # ax.set_zlabel('Z')
 # ax.set_zlim(-10, 10)
-#==============================================================================
+# ==============================================================================
 
 plt.show()
