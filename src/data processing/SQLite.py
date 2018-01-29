@@ -7,6 +7,7 @@ Created on Fri Apr 29 19:46:10 2016
 
 import sqlite3
 
+
 class DBManager(object):
     def __init__(self, db):
         self.conn = sqlite3.connect(db)
@@ -22,10 +23,11 @@ class DBManager(object):
     def __del__(self):
         self.conn.close()
 
-conn = sqlite3.connect(':memory:') #Creation of a temporary database
-conn = sqlite3.connect('my_db.sql') #Creation of a database
 
-#Example and creation of a database
+conn = sqlite3.connect(':memory:')  # Creation of a temporary database
+conn = sqlite3.connect('my_db.sql')  # Creation of a database
+
+# Example and creation of a database
 cursor = conn.cursor()
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS users(
@@ -36,7 +38,7 @@ CREATE TABLE IF NOT EXISTS users(
 """)
 conn.commit()
 
-#==============================================================================
+# ==============================================================================
 # #Deleting a table from the database
 # cursor = c.cursor()
 # cursor.execute("""
@@ -44,24 +46,24 @@ conn.commit()
 # """)
 # conn.commit()
 # print("database suppressed")
-#==============================================================================
+# ==============================================================================
 
-#Insert Data into the table
+# Insert Data into the table
 cursor.execute("""
 INSERT INTO users(name, age) VALUES(?, ?)""", ("John", 15))
 conn.commit()
 
-#Inserting data with a python dictionary in the table
-data = {"name" : "Sam", "age" : 16}
+# Inserting data with a python dictionary in the table
+data = {"name": "Sam", "age": 16}
 cursor.execute("""
 INSERT INTO users(name, age) VALUES(:name, :age)""", data)
 conn.commit()
 
-#Get the ID of the newly inserted row
+# Get the ID of the newly inserted row
 id = cursor.lastrowid
 print('last row id: %d' % id)
 
-#With executemany, you can launch multiple queries and insert multiple rows
+# With executemany, you can launch multiple queries and insert multiple rows
 users = []
 users.append(("Steve", 42))
 users.append(("John", 67))
@@ -69,34 +71,34 @@ cursor.executemany("""
 INSERT INTO users(name, age) VALUES(?, ?)""", users)
 conn.commit()
 
-#With fetchone, you can reach the first line only of the query
+# With fetchone, you can reach the first line only of the query
 cursor.execute("""SELECT name, age FROM users""")
 user1 = cursor.fetchone()
 print(user1)
 
-#Performing a specific research
+# Performing a specific research
 id = 2
 cursor.execute("""SELECT id, name FROM users WHERE id=?""", (id,))
 response = cursor.fetchone()
 
-#With fetchall() get all of the data from your query
+# With fetchall() get all of the data from your query
 cursor.execute("""SELECT id, name, age FROM users""")
 rows = cursor.fetchall()
 for row in rows:
     print('{0} : {1} - {2}'.format(row[0], row[1], row[2]))
 
-#Cursor work as an interator here calling fetchall() automatically
+# Cursor work as an interator here calling fetchall() automatically
 cursor.execute("""SELECT id, name, age FROM users""")
 for row in cursor:
     print('{0} : {1}, {2}'.format(row[0], row[1], row[2]))
 
-#To modify the input or a row
+# To modify the input or a row
 cursor.execute("""UPDATE users SET age = ? WHERE id = 2""", (31,))
 
-#To comeback to the last commit
+# To comeback to the last commit
 conn.rollback()
 
-#Handling errors
+# Handling errors
 try:
     conn = sqlite3.connect('data/users.db')
     cursor = conn.cursor()
@@ -117,7 +119,7 @@ except Exception as e:
 finally:
     conn.close()
 
-#==============================================================================
+# ==============================================================================
 # #Errors that can be trapped
 # Error
 # DatabaseError
@@ -129,7 +131,7 @@ finally:
 # ProgrammingError
 # InterfaceError
 # Warning
-#==============================================================================
+# ==============================================================================
 
-#Closing the connexion with the db at the end
+# Closing the connexion with the db at the end
 conn.close()

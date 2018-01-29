@@ -31,6 +31,7 @@ plt.axis('equal')
 
 fig = plt.figure()
 ax = fig.gca()
+
 import numpy as np
 
 ax.pie(np.random.random(4), explode=explode, labels=labels, colors=colors,

@@ -7,6 +7,7 @@ Created on Sun Jun 18 17:38:11 2017
 import csv
 import csv_to_json as ctj
 
+
 def conversion(path, delim):
     """
     Convert a csv file input into a truth.json file and a dare.json file
@@ -17,8 +18,8 @@ def conversion(path, delim):
     csv_dare = []
 
     try:
-        #Conversion csv to json
-        with open(path,"rt") as csv_file:
+        # Conversion csv to json
+        with open(path, "rt") as csv_file:
             reader = csv.reader(csv_file, delimiter=delim, quoting=csv.QUOTE_ALL)
             fieldnames = next(reader)
             reader = csv.DictReader(csv_file, delimiter=delim, fieldnames=fieldnames)
@@ -32,14 +33,16 @@ def conversion(path, delim):
             ctj.to_json("dare.json", csv_dare)
 
     except FileNotFoundError:
-        print(path +" was not found")
+        print(path + " was not found")
+
 
 def main():
     """
     Script for truth or dare app
 
     """
-    conversion("input.csv",";")
+    conversion("input.csv", ";")
+
 
 if __name__ == '__main__':
     main()

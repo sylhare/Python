@@ -2,6 +2,7 @@
 # file: TestInvestment.py
 
 """
+Python 2.x
 __author__= Tom Bryan
 __date__= 2003
 __source__= http://starship.python.net/crew/tbryan/UnitTestTalk/slide1.html

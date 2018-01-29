@@ -6,6 +6,8 @@ Created on Thu Apr  6 13:44:17 2017
 @author: sylhare
 
 """
+
+
 class Test:
     """
     Here is a custom test class with default methods that can be implemented
@@ -53,7 +55,6 @@ class Test:
         to get a computed attribute (unconditionally)
 
         """
-
 
     def __getattr__(self, prop):
         """
@@ -122,15 +123,14 @@ class Test:
     ## Classes That Can Be Used in a with Block
 
 
-
 ### Example ###
-class Animal ():
+class Animal():
     """
     Test class to create an animal class in python
 
     """
     animal_type = "Animal"
-    
+
     def __init__(self, name, color):
         """
         to initialize the Animal Class
@@ -153,12 +153,13 @@ class Animal ():
         if key == 'color':
             return self.__color__
 
-class Magic ():
+
+class Magic():
     """
     Magical test class
     """
-    magic_type = "Magic" 
-    
+    magic_type = "Magic"
+
     def __init__(self, magic):
         """
         to initialize the magic Class
@@ -166,18 +167,19 @@ class Magic ():
         """
         self.__magic__ = magic
 
-    @staticmethod # Means that it doesn't use any attributes of the class
+    @staticmethod  # Means that it doesn't use any attributes of the class
     def magic_word(word):
         print("abracada " + word)
 
 
-class Cat (Animal):
+class Cat(Animal):
     """
     SubClass of Animal
     Inheriting its method
     Used to implement Cat's methods
 
     """
+
     def __init__(self, name, color):
         super().__init__(self, name, color)
 
@@ -185,20 +187,24 @@ class Cat (Animal):
     def purr():
         print("Purr...")
 
-class Dog (Animal):
+
+class Dog(Animal):
     """
     Used to implement Dog's methods
 
     """
+
     @staticmethod
     def bark():
         print("Woof!")
 
-class Bird (Animal, Magic):
+
+class Bird(Animal, Magic):
     """
     Used to implement Bird's methods inheriting Animal and Magic methods
 
     """
+
     @staticmethod
     def tweet():
         print("piiip")
@@ -209,12 +215,11 @@ thunder = Bird("Thunder", "yellow")
 thunder.magic_word('... bra!')
 
 animal = Animal("zet", "brown")
-print (str(animal))
+print(str(animal))
 
 dog = Dog("Ford", "brown")
 print(dog.name)
 dog.bark()
-
 
 # Built-In Class Attributes
 """
@@ -231,8 +236,8 @@ __bases__: A possibly empty tuple containing the base classes,
 in the order of their occurrence in the base class list.
 
 """
-print ("Animal.__doc__:", str(Animal.__doc__))
-print ("Animal.__name__:", Animal.__name__)
-print ("Animal.__module__:", str(Animal.__module__))
-print ("Animal.__bases__:", str(Animal.__bases__))
-print ("Animal.__dict__:", str(Animal.__dict__))
+print("Animal.__doc__:", str(Animal.__doc__))
+print("Animal.__name__:", Animal.__name__)
+print("Animal.__module__:", str(Animal.__module__))
+print("Animal.__bases__:", str(Animal.__bases__))
+print("Animal.__dict__:", str(Animal.__dict__))

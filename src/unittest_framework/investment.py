@@ -3,7 +3,9 @@
 
 import math
 
-"""The invest module provides functions for calculating the total
+"""
+Python 2.x
+The invest module provides functions for calculating the total
 interest payment on an investment.  
 """
 
@@ -68,6 +70,7 @@ def total_interest_continuously(principal, rate, time):
 
 
 def _test():
+    """ Make the doc test"""
     import doctest, investment
     return doctest.testmod(investment)
 

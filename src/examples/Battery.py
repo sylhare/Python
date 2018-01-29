@@ -5,6 +5,7 @@ Created on Thu Apr  6 18:22:16 2017
 @author: sylhare
 """
 
+
 class Battery:
     """ 
     TEMPERATURE OPERATING RANGE
@@ -60,10 +61,10 @@ class Battery:
             Maximal
     
     """
-     
+
     def __init__(self):
         print("test")
-        
+
     class Voltage:
         """
                 BATTERY TYPE
@@ -81,10 +82,8 @@ class Battery:
                 for END-VOLTAGE
         """
         print("voltage")
-        
-        
+
     class Current:
         """
         """
-        print ("Current")
-        
+        print("Current")
