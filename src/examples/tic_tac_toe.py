@@ -15,12 +15,14 @@ import random
 import time
 import matplotlib.pyplot as plt
 
+
 def create_board():
     """
     Returns an 3x3 matrix (numpy.array) full of zeros
 
     """
-    return numpy.zeros(shape = (3, 3))
+    return numpy.zeros(shape=(3, 3))
+
 
 def place(board, player, position):
     """
@@ -35,6 +37,7 @@ def place(board, player, position):
     else:
         print("player {} is already on that position".format(board[position]))
 
+
 def possibilities(board):
     """
     Check for possibile empty position in the board
@@ -43,10 +46,11 @@ def possibilities(board):
     Returns a list of tuples: [(x1, y1), (x2, y2), ...]
 
     """
-    (x,y) = numpy.where(board==0) #returns a tuple of 2 arrays ([x's], [y's])
-    p = [(x[i],y[i]) for i in range(0, len(x))] #creates a list of (x, y)
+    (x, y) = numpy.where(board == 0)  # returns a tuple of 2 arrays ([x's], [y's])
+    p = [(x[i], y[i]) for i in range(0, len(x))]  # creates a list of (x, y)
 
     return p
+
 
 def random_place(board, player):
     """
@@ -60,6 +64,7 @@ def random_place(board, player):
 
     return board
 
+
 def row_win(board, player):
     """
     Check if a player is 3 times on the same row,
@@ -69,13 +74,14 @@ def row_win(board, player):
     """
 
     for i in range(0, 3):
-        j=0
-        while(board[i, j] == player):
-            j+=1
+        j = 0
+        while board[i, j] == player:
+            j += 1
             if j == 3:
                 return True
 
     return False
+
 
 def col_win(board, player):
     """
@@ -87,6 +93,7 @@ def col_win(board, player):
     """
     board = numpy.transpose(board)
     return row_win(board, player)
+
 
 def diag_win(board, player):
     """
@@ -102,6 +109,7 @@ def diag_win(board, player):
     else:
         return False
 
+
 def evaluate(board):
     """
     Evaluate the board for a potential winner,
@@ -116,14 +124,15 @@ def evaluate(board):
 
     for player in [1, 2]:
         if (row_win(board, player)
-            or col_win(board, player)
-            or diag_win(board, player)):
+                or col_win(board, player)
+                or diag_win(board, player)):
             score = player
 
     if numpy.all(board != 0) and score == 0:
         score = -1
 
     return score
+
 
 def play_game():
     """
@@ -144,6 +153,7 @@ def play_game():
 
     return win
 
+
 def play_strategic_game():
     """
     Player 1 starts to play, each player plays randomly.
@@ -156,14 +166,15 @@ def play_strategic_game():
     board[1, 1] = 1
 
     while win == 0:
-        for player in [2,1]:
+        for player in [2, 1]:
             board = random_place(board, player)
             win = evaluate(board)
             if win != 0:
                 break
     return win
 
-def test_play(function, games=1000):
+
+def test_play(func, games=1000):
     """
     Play multiple games with the specified fonction in the tic tac toe:
         - play_game()
@@ -176,10 +187,10 @@ def test_play(function, games=1000):
 
     t = time.time()
     for i in range(0, games):
-        scores.append(function())
+        scores.append(func())
     t = time.time() - t
 
-    print("Execution's time: {} of {}".format(t, function))
+    print("Execution's time: {} of {}".format(t, func))
 
     return scores
 

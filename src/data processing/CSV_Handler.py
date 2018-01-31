@@ -7,18 +7,17 @@ Created on Mon Nov 21 06:34:29 2016
 
 @author: sylhare
 """
-#import sys
+# import sys
 import csv
 from collections import defaultdict
-#import numpy as np
+# import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.dates import DateFormatter
-#from matplotlib.dates import DayLocator, HourLocator
+# from matplotlib.dates import DayLocator, HourLocator
 import datetime
 
-
 ### WRITE CSV
-c = csv.writer(open("test.csv","wt")) #wt write in text mode
+c = csv.writer(open("test.csv", "wt"))  # wt write in text mode
 c.writerow(["Date", "Money", "Types", "Other"])
 date = ['2016/11/20', '2016/11/22', '2016/11/24', '2016/11/24', '2016/11/26',
         '2016/11/28']
@@ -30,54 +29,52 @@ for i in range(0, len(date)):
     c.writerow([date[i], money[i], types[i], other[i]])
 
 ### READ CSV ###
-#f = open(sys.argv[1], 'rt') #Will open file when running python CSV_Handler.py file.csv
-#try:
+# f = open(sys.argv[1], 'rt') #Will open file when running python CSV_Handler.py file.csv
+# try:
 #    reader = csv.reader(f)
 #    for row in reader:
 #        print (row)
-#finally:
+# finally:
 #    f.close()
 
 
-with open("test.csv","rt") as csvfile:
+with open("test.csv", "rt") as csvfile:
     reader = csv.reader(csvfile, delimiter=',', quoting=csv.QUOTE_ALL)
     fieldnames = next(reader)
-    #reader = csv.DictReader(csvfile, delimiter=';', fieldnames=fieldnames)
+    # reader = csv.DictReader(csvfile, delimiter=';', fieldnames=fieldnames)
     for row in reader:
         for i in range(len(row)):
-            print (fieldnames[i] + ":" + row[i])
+            print(fieldnames[i] + ":" + row[i])
         for r in row:
-            print (r)
-          
+            print(r)
 
-
-columns = defaultdict(list) # each value in each column is appended to a list
-with open("test.csv","rt") as f:
-    reader = csv.DictReader(f) # read rows into a dictionary format
-    for row in reader: # read a row as {column1: value1, column2: value2,...}
-        for (k,v) in row.items(): # go over each column name and value
-            columns[k].append(v) # append the value into the appropriate list
-                                 # based on column name k
+columns = defaultdict(list)  # each value in each column is appended to a list
+with open("test.csv", "rt") as f:
+    reader = csv.DictReader(f)  # read rows into a dictionary format
+    for row in reader:  # read a row as {column1: value1, column2: value2,...}
+        for (k, v) in row.items():  # go over each column name and value
+            columns[k].append(v)  # append the value into the appropriate list
+            # based on column name k
 
 ### WORK WITH CSD DATA ###
-dates=columns['Date']
-money=columns['Money']
-types=columns['type']
+dates = columns['Date']
+money = columns['Money']
+types = columns['type']
 
 dates = [datetime.datetime.strptime(date, '%Y/%m/%d') for date in dates]
-#date = [date.weekday() for date in dates]
-datetime.datetime.today().weekday() #0 is Monday, 6 is Sunday
+# date = [date.weekday() for date in dates]
+datetime.datetime.today().weekday()  # 0 is Monday, 6 is Sunday
 
-#y = np.arange(len(dates)*1.0) #np.ranage return evenly spaced values within a given interval.
+# y = np.arange(len(dates)*1.0) #np.ranage return evenly spaced values within a given interval.
 fig, ax = plt.subplots()
 ax.plot_date(dates, money)
 ax.hist(dates, bins=10, color='lightblue')
 
-#ax.xaxis.set_major_locator(DayLocator())
-#ax.xaxis.set_minor_locator(HourLocator(np.arange(0, 25, 6)))
+# ax.xaxis.set_major_locator(DayLocator())
+# ax.xaxis.set_minor_locator(HourLocator(np.arange(0, 25, 6)))
 ax.xaxis.set_major_formatter(DateFormatter('%Y-%m-%d'))
-#ax.fmt_xdata = DateFormatter('%Y-%m-%d %H:%M:%S')
-fig.autofmt_xdate() #Put the dates in a good format (visible not next to each other)
+# ax.fmt_xdata = DateFormatter('%Y-%m-%d %H:%M:%S')
+fig.autofmt_xdate()  # Put the dates in a good format (visible not next to each other)
 
 plt.show()
 plt.figure()
