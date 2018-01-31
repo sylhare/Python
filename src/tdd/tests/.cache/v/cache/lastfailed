@@ -1,0 +1,14 @@
+{
+  "test_pytest_calculator.py::test_add": true,
+  "test_pytest_calculator.py::test_divide": true,
+  "test_pytest_calculator.py::test_last_answer_init": true,
+  "test_pytest_calculator.py::test_maximum[2.0-3.0-3.0]": true,
+  "test_pytest_calculator.py::test_maximum[3.0-2.0-3.0]": true,
+  "test_pytest_calculator.py::test_maximum[3.0-3.0-3.0]": true,
+  "test_pytest_calculator.py::test_minimum[2.0-2.0-2.0]": true,
+  "test_pytest_calculator.py::test_minimum[2.0-3.0-2.0]": true,
+  "test_pytest_calculator.py::test_minimum[3.0-2.0-2.0]": true,
+  "test_pytest_calculator.py::test_multiply": true,
+  "test_pytest_calculator.py::test_subtract": true,
+  "test_pytest_calculator.py::test_subtract_negative": true
+}
