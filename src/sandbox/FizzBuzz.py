@@ -6,7 +6,7 @@ instead of the number and for the multiples of five print 'Buzz'.
 For numbers which are multiples of both three and five print 'FizzBuzz'.
 """
 
-for num in range(1,21):
+for num in range(1, 21):
     string = ""
     if num % 3 == 0:
         string = string + "Fizz"

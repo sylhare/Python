@@ -18,27 +18,16 @@ Desktop.ini
 *.iml
 *.xml
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
 # Windows shortcuts
 *.lnk
 build/
 
-/src/pycharm/VenvPython3.6/.idea/
-/src/pycharm/VenvPython3.6/venv/
 /src/pycharm/VenvPython2.7/.idea/
 /src/pycharm/VenvPython2.7/venv/
 /src/test framework/tdd/venv/
 /src/test framework/tdd/.cache/
 /src/test framework/tdd/.idea/
 /src/test framework/tdd/tests/.cache/
-/.cache/
-/src/unittest_framework/.idea/
-/src/bdd/.idea/
+/src/test framework/bdd/.idea/
+/src/pycharm/VenvPython3.6/.idea/
+/src/pycharm/VenvPython3.6/venv/
