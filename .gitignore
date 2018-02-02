@@ -7,7 +7,7 @@ ehthumbs.db
 
 # Python file
 *.pyc
-src/tdd/venv/**
+src/test framework/tdd/venv/**
 .coverage
 
 # Folder config file
@@ -31,14 +31,14 @@ $RECYCLE.BIN/
 *.lnk
 build/
 
-/src/Pycharm/VenvPython3.6/.idea/
-/src/Pycharm/VenvPython3.6/venv/
-/src/Pycharm/VenvPython2.7/.idea/
-/src/Pycharm/VenvPython2.7/venv/
-/src/tdd/venv/
-/src/tdd/.cache/
-/src/tdd/.idea/
-/src/tdd/tests/.cache/
+/src/pycharm/VenvPython3.6/.idea/
+/src/pycharm/VenvPython3.6/venv/
+/src/pycharm/VenvPython2.7/.idea/
+/src/pycharm/VenvPython2.7/venv/
+/src/test framework/tdd/venv/
+/src/test framework/tdd/.cache/
+/src/test framework/tdd/.idea/
+/src/test framework/tdd/tests/.cache/
 /.cache/
 /src/unittest_framework/.idea/
 /src/bdd/.idea/

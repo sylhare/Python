@@ -1,8 +1,0 @@
-{
-  "test/test_bugged_calculators.py::TddInPythonExample::test_bugged_calculator_with_pdb": true,
-  "test/test_bugged_calculators.py::TddInPythonExample::test_bugged_calculator_with_print": true,
-  "test/test_calculator.py": true,
-  "test/test_calculator.py::TddInPythonExample::test_maximum": true,
-  "test/test_calculator.py::TddInPythonExample::test_minimum": true,
-  "test/test_pytest_calculator.py": true
-}
