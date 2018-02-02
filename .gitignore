@@ -29,3 +29,13 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+build/
+
+/src/Pycharm/VenvPython3.6/.idea/
+/src/Pycharm/VenvPython3.6/venv/
+/src/Pycharm/VenvPython2.7/.idea/
+/src/Pycharm/VenvPython2.7/venv/
+/src/tdd/venv/
+/src/tdd/.cache/
+/src/tdd/.idea/
+/src/tdd/tests/.cache/
