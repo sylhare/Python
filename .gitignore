@@ -39,3 +39,6 @@ build/
 /src/tdd/.cache/
 /src/tdd/.idea/
 /src/tdd/tests/.cache/
+/.cache/
+/src/unittest_framework/.idea/
+/src/bdd/.idea/
