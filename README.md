@@ -1,4 +1,6 @@
-# Python projects [![Codacy Badge](https://api.codacy.com/project/badge/Grade/79b0234d210c427f95285a15dc4f81e9)](https://www.codacy.com/app/Sylhare/Python_Projects?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Sylhare/Python_Projects&amp;utm_campaign=Badge_Grade)
+# Python projects 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/79b0234d210c427f95285a15dc4f81e9)](https://www.codacy.com/app/Sylhare/Python_Projects?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Sylhare/Python_Projects&amp;utm_campaign=Badge_Grade)
+
 [![forthebadge](http://forthebadge.com/images/badges/gluten-free.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/built-with-science.svg)](http://forthebadge.com)
 
 ## Intoduction 
@@ -60,22 +62,56 @@ Creating a package with `__init__.py` is all about making it easier to develop l
 
 ### Upload to Pypi
 
-[PyPI](https://pypi.org/) is the Python Package Index a repository of software for the Python programming language. You can follow the official [guidelines on how to package and distribute your project](https://packaging.python.org/tutorials/distributing-packages/).
-Once done, to upload your project you will need:
+[PyPI](https://pypi.org/) is the Python Package Index a repository of software for the Python programming language. 
+To upload your project you will need:
 
-- create an account on Pypi
-- Package your project into a `.tar`(if you followed the guideline, you have a well configured setup.py):
-```
-python setup.py sdist
-```
+- Create an account on Pypi
+- Structure your code:
+    
+    ```bash
+    package-name             # Root repository folder
+    ├── package-name
+    |   ├── __init__.py	     # To make a python directory, for imports                           
+    |   └── module.py	     # Module of the package	  
+    ├── tests
+    |   ├── __init__.py	     
+    |   └── test.py          # Tests of the module
+    └── setup.py
+    ```
+
+- Create a `setup.py` usign the [guidelines on how to package and distribute your project](https://packaging.python.org/tutorials/distributing-packages/).
+
+    ```python
+    from setuptools import setup
+
+    setup(name='package-name',
+          version='0.1',
+          description='Package description',
+          url='http://link.to.the.source.code',
+          author='name',
+          author_email='name@example.com',
+          license='MIT',
+          packages=['package-name'],
+          zip_safe=False)
+    ```
+    
+- Package your project into a `.tar`:
+
+    ```
+    python setup.py sdist
+    ```
+    
 - Download and install `twine` which will allow you to safely upload your project
-```
-pip install twine
-```
+
+    ```
+    pip install twine
+    ```
+    
 - Upload your project
-```
-python twine upload dist/*
-```
+
+    ```
+    python twine upload dist/*
+    ```
 
 > When you upload your project, it might be refused due to naming problem. If that's the case you will have to rename your project.
 
@@ -99,4 +135,5 @@ python -m http.server 8000
 - [Built in attributes](https://www.tutorialspoint.com/python/python_classes_objects.htm)
 - [Going Full Stack Python](https://www.fullstackpython.com/introduction.html)
 - [How to create a python package](http://timothybramlett.com/How_to_create_a_Python_Package_with___init__py.html)
-- [How to structure your python project](http://docs.python-guide.org/en/latest/writing/structure/)ΩΩΩΩΩΩ
+- [How to structure your python project](http://docs.python-guide.org/en/latest/writing/structure/)
+- [Python package - Minimal Structure](http://python-packaging.readthedocs.io/en/latest/minimal.html)
