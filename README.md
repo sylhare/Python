@@ -13,13 +13,14 @@ There are currently two versions of python currently in use, I would suggest goi
 
 The [Anaconda](https://www.anaconda.com/) distribution is the easiest way to get you started with python, it comes with built in package, IDE and a lot of great stuffs.
 
- - Download [here](https://www.anaconda.com/download/)
+ - Download [Anaconda](https://www.anaconda.com/download/)
 
 You can also do it the classic way, by downloading pyhton directly from there website [here](https://www.python.org/downloads/) and then start coding on a text editor. </br>
 Python should have already been installed if you're using a linux distribution. You can always check which version is intalled:
 
+```bash
 	python --version
-
+```
 
 ### Python on Windows
 
@@ -27,19 +28,27 @@ Assuming that you've installed python via Anaconda, or manually (setting the env
 
 Start a python prompt on the command prompt:
 
+```bash
 	python
+```
 
 Install dependencies via pip on a command prompt:
 
+```bash
 	python -m pip install package
-    
+```
+   
 Uninstall with pip through:
 
+```bash
     python -m pip uninstall package
+```
 
 Install dependencies through a proxy
 
+```bash
 	python -m pip install --proxy http://user:password@proxyserver:port package
+```
 
 - Replace Package by the *package* you want to install
 - the `-m` means module
@@ -49,8 +58,9 @@ Install dependencies through a proxy
 
 Run a python script on a command prompt (windows):
 
+```bash
 	python.exe script.py arg1
-    
+```
 
 ### Creating Python packages
 
@@ -97,20 +107,20 @@ To upload your project you will need:
     
 - Package your project into a `.tar`:
 
-    ```
+    ```bash
     python setup.py sdist
     ```
     
 - Download and install `twine` which will allow you to safely upload your project
 
-    ```
+    ```bash
     pip install twine
     ```
     
 - Upload your project
 
-    ```
-    python twine upload dist/*
+    ```bash
+    python -m twine upload dist/*
     ```
 
 > When you upload your project, it might be refused due to naming problem. If that's the case you will have to rename your project.
@@ -120,14 +130,16 @@ To upload your project you will need:
 You can simply create a webserver at [localhost:8000](http://localhost:8000) in python thanks to this module:
 
 - Python 2
-```
+
+```bash
 python –m SimpleHTTPServer 9000 # You can change the port
 ```
+
 - Python 3
-```
+
+```bash
 python -m http.server 8000 
 ```
-
 
 ### Sources
 
