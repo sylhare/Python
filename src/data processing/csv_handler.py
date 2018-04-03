@@ -9,6 +9,7 @@ Created on Mon Nov 21 06:34:29 2016
 """
 # import sys
 import csv
+import io
 from collections import defaultdict
 # import numpy as np
 import matplotlib.pyplot as plt
@@ -16,7 +17,7 @@ from matplotlib.dates import DateFormatter
 # from matplotlib.dates import DayLocator, HourLocator
 import datetime
 
-### WRITE CSV
+# -- WRITE CSV -- #
 c = csv.writer(open("test.csv", "wt"))  # wt write in text mode
 c.writerow(["Date", "Money", "Types", "Other"])
 date = ['2016/11/20', '2016/11/22', '2016/11/24', '2016/11/24', '2016/11/26',
@@ -28,7 +29,7 @@ other = ['A', 'A', 'A', 'A', 'A', 'A']
 for i in range(0, len(date)):
     c.writerow([date[i], money[i], types[i], other[i]])
 
-### READ CSV ###
+# -- READ CSV -- #
 # f = open(sys.argv[1], 'rt') #Will open file when running python CSV_Handler.py file.csv
 # try:
 #    reader = csv.reader(f)
@@ -56,7 +57,19 @@ with open("test.csv", "rt") as f:
             columns[k].append(v)  # append the value into the appropriate list
             # based on column name k
 
-### WORK WITH CSD DATA ###
+
+with io.open("test.csv", 'r', encoding='utf-8', newline='') as f:
+    sniffer = csv.Sniffer()
+    dialect = sniffer.sniff(f.readline(), [',', ';'])  # Check for the delimiter
+    f.seek(0)                                          # Go back at the beginning of the file
+
+    # reader = csv.reader(map(lambda x: x.replace(u"\uFEFF", u""), f), dialect)
+    reader = csv.reader((x.replace(u"\uFEFF", u"") for x in f), dialect)
+
+    rows = list(reader)
+
+
+# -- WORK WITH CSD DATA -- #
 dates = columns['Date']
 money = columns['Money']
 types = columns['type']

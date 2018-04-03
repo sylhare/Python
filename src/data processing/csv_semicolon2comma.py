@@ -22,6 +22,8 @@ if __name__ == "__main__":  # pragma: no cover
         csvfile.seek(0)
         print(csvfile.read(2048))
         csvfile.seek(0)
+        dialect = sniffer.sniff(csvfile.readline(), [',', ';'])
+        print(dialect.delimiter)
         reader = csv.reader(csvfile)
         print(reader)
         has_header = sniffer.has_header(csvfile.read(2048))
