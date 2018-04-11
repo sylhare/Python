@@ -31,3 +31,7 @@ build/
 /src/test framework/bdd/.idea/
 /src/pycharm/VenvPython3.6/.idea/
 /src/pycharm/VenvPython3.6/venv/
+/src/projects/test framework/tdd/venv/
+/src/projects/test framework/tdd/.cache/
+/src/projects/test framework/tdd/.idea/
+/src/projects/test framework/bdd/.idea/

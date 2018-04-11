@@ -7,7 +7,6 @@ https://stackoverflow.com/questions/17260469/instantiate-python-unittest-testcas
 """
 
 import unittest
-from unittest import TestCase
 
 
 # Example 1 with test suite
@@ -16,6 +15,7 @@ class ParametrizedTestCase(unittest.TestCase):
     """ TestCase classes that want to be parametrized should
         inherit from this class.
     """
+
     def __init__(self, methodName='runTest', param=None):
         super(ParametrizedTestCase, self).__init__(methodName)
         self.param = param
@@ -35,6 +35,7 @@ class ParametrizedTestCase(unittest.TestCase):
 
 class TestOne(ParametrizedTestCase):
     """ test One """
+
     def test_something(self):
         """ test ex2 """
         # print('param =', self.param)
@@ -123,18 +124,61 @@ class TestOdd:
         self.assertTrue(self.f(5))
 
 
-class TestOdd3(TestOdd, TestCase):
+class TestOdd3(TestOdd, ClassOdd, unittest.TestCase):
     """ test odd 3 """
     NUMBER = 3
     func = func_odd
     f = ClassOdd.f_odd
 
 
-class TestOdd5(TestOdd, TestCase):
+class TestOdd5(TestOdd, ClassOdd, unittest.TestCase):
     """ test odd 4 """
     NUMBER = 5
     func = func_odd
     f = ClassOdd.f_odd
+
+
+# Example 5 using abstract class
+
+def function_a(string):
+    """ bogus True """
+    print(string)
+    return True
+
+
+def function_b(string):
+    """ Bogus True """
+    print(string)
+    return True
+
+
+class AbstractTestCase:
+
+    def test_generic_input_one(self):
+        result = self.function("input 1")
+        self.assertTrue(result)
+
+    def test_generic_input_two(self):
+        result = self.function("input 2")
+        self.assertTrue(result)
+
+
+class TestsFunctionA(AbstractTestCase, unittest.TestCase):
+
+    def function(self, param):
+        return function_a(param)
+
+    def test_specific_input(self):
+        self.assertTrue(self.function("specific input"))
+
+
+class TestsFunctionB(AbstractTestCase, unittest.TestCase):
+
+    def function(self, param):
+        return function_b(param)
+
+    def test_another_specific_input(self):
+        self.assertTrue(self.function("another specific input"))
 
 
 if __name__ == '__main__':
