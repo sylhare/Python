@@ -139,3 +139,6 @@ finally:
 
 # Closing the connexion with the db at the end
 conn.close()
+
+if __name__ == "__main__":
+    pass
