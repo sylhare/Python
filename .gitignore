@@ -22,16 +22,8 @@ Desktop.ini
 *.lnk
 build/
 
-/src/pycharm/VenvPython2.7/.idea/
-/src/pycharm/VenvPython2.7/venv/
-/src/test framework/tdd/venv/
-/src/test framework/tdd/.cache/
-/src/test framework/tdd/.idea/
-/src/test framework/tdd/tests/.cache/
-/src/test framework/bdd/.idea/
-/src/pycharm/VenvPython3.6/.idea/
-/src/pycharm/VenvPython3.6/venv/
 /src/projects/test framework/tdd/venv/
 /src/projects/test framework/tdd/.cache/
 /src/projects/test framework/tdd/.idea/
 /src/projects/test framework/bdd/.idea/
+/src/projects/test framework/tdd/.coverage

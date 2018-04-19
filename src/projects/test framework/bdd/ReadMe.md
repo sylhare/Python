@@ -60,7 +60,7 @@ Root
 
 ## Installation
 
-For the process, once you have python **2.x** installed:
+For the process, once you have python **2.x** installed (because lettuce is only compatible with Python 2.x):
 
 - Install [lettuce](http://lettuce.it/index.html) that will be used as the *Gherkin* parser.
 ```

@@ -67,14 +67,14 @@ class Battery:
 
     class Voltage:
         """
-                BATTERY TYPE
-        VOLTAGE 
+            BATTERY TYPE
+            VOLTAGE
             OPEN CIRCUIT
             CHARGING
             NORMAL
             NOMINAL
             MAXIMAL CHARGE
-        CAPACITY
+            CAPACITY
             MINIMAL
             TYPICAL
             NOMINAL
@@ -85,5 +85,6 @@ class Battery:
 
     class Current:
         """
+            CURRENT
         """
         print("Current")
