@@ -1,0 +1,42 @@
+language: python
+
+sudo: false
+
+notifications:
+   email: false
+
+# Codacy and Code Climate token for coverage
+env:
+  global:
+    secure: A+LEoLUab6uufvDD9WdMh5b3lnjq65AAJAm+pUO30hl39ewQJEMZKg//8fP1xder9x4Yl6XeEGjRX09XDMUTL3y9dKDWok7e/B1OthZKMORbrMuj0KY9piKgHQ7SnDKR7Q3IWpqkkxUtZX/UcK+EyPQZstxIGJRGEdibCEcKpQK4f26wKATOkJ4FKBchsXKf/68JIRfF/yRY6VTErinCTrYAfjl3ZPYk+aER3ukLPz8yG3x48b9Q0uxjDkQiQXeffyfl2niQMtf93xJ8R3H2ohNjmssy3fwxKUaqWMntgiGG3HjWd1zP3dWBuHUDF7pQTA/S3ESeA9Dx1MYrsjDgjmBwvw9Bl+czzBAkaaw4mNNoyiN76ntNUWDfbIk09MBlvE1vRvQPBdxKJ9QWBJt3bSY7+K4yuNZCVWYiVlioS0pHIyCyHL1oOD6q24uvswISBddnDWR+wG+g4tsILo2nYDqqfLVMHyL22m3CwVAzvs4kVWZHf/3xdQb2cstA43D+wvYNp/HdtpowLsJXbuPNnm1jx3SPiunOOC9crUK6NsXuLLw5USPWlRwdRzE5zsqKXiY3Y5gkrdSmZ5qRHSX9PthT/88iub2aBzYumoaos15arJKGWsdKkl4STNJMGjog2Mv9M46UkpR45tNXpYt9Y1OXa0Zb/01jb7wr44z9CqU=
+    secure: PbYbKR18rcIXrSksRKfIH9aC72HCmbn4HUF5QzA24g16r0aUqzrw6XDc+0TwsBTnJs2Xw49kJBuMLmvdjFEVCqHtKycOaAlPxjI9ARokbet9LZlzrBYqSYuFzNwc+0KIX1zzsreTsLL2woB3v0iiqcDtvh7eQPmd+JKTrzT2Q8ETqYKWge1wZtvmEm7K3v7s3ZKD9WcC7wHLoL+nYK/jqIyPjrcuEz+Xk5GMRvQrUGJhlkJZbuRXHc4/eAsfd9fjl63JQrr8Cy9I8jS3kydNIMQr3DQuz2iVo0u2S7cb7la+LIGbGYVu7cms/S+RdkFod0cIwu+zjh3apae1vEq7DFQzu/uOttFhkIOY+99cnhgg7NDFlPWYhfEpU433qRjBaLzKmfBgucn2OIM2mFZuiVxDTOsWmAot9ri5hpCiWfQh/6wNaAJahmL11GOi7sdq1ro4nce7Z9hcgVCIWuTfAX/QUSgT3u/wSKYGcO4QI4sizfqS6KSOlse5fWRu+sz1HE7L1ytwUzNG8MKhx/voZfLHIdCHjwyp1h3ggDOImfgfWUpU5wV6jWOs8777sJHZRQiQuBOIuuuf2YtsTORhacG5LxtcMKLa9JaHRYKvCfztIYdr8Lx6DvHENk6GgwWeyuipw7/RtIm+Uad8xrRnmMonMhoslk/Ne7vy4op7Cps=
+
+
+python:
+  - 3.5
+  - 2.7
+
+before_install:
+  - pip install -U pip
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter # Code Climate coverage
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+#  - python setup.py install
+
+# commands to run tests
+script:
+  - coverage run --source=. -m unittest discover
+  - coverage report --omit="test*" -m # m are for missing lines not tested
+  - coverage xml # For Codacy
+
+after_success:
+  - pip install charpy
+  - pip install nprime
+  - pip install simple-lda
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT    # Code Climate code coverage
+  - codecov                                                           # Codecov code coverage
+  - python-codacy-coverage -r coverage.xml                            # Codacy code coverage

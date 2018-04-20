@@ -1,0 +1,12 @@
+pandas
+numpy
+matplotlib
+requests
+pickle
+lettuce
+pytest
+nosetest
+sqlite3
+nprime
+charpy
+simple-lda
