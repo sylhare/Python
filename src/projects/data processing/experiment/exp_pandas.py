@@ -27,9 +27,9 @@ def println(string):
 
 # Create a dataframe
 raw_data = {'first_name': ['Jason', 'Molly', np.nan, np.nan, np.nan],
-        'nationality': ['USA', 'USA', 'France', 'UK', 'UK'],
-        'age': [42, 52, 36, 24, 70]}
-df = pd.DataFrame(raw_data, columns = ['first_name', 'nationality', 'age'])
+            'nationality': ['USA', 'USA', 'France', 'UK', 'UK'],
+            'age': [42, 52, 36, 24, 70]}
+df = pd.DataFrame(raw_data, columns=['first_name', 'nationality', 'age'])
 
 # Create variable with TRUE if nationality is USA
 american = df['nationality'] == "USA"
@@ -43,7 +43,6 @@ df[american & elderly]
 # Select all cases where the first name is not missing and nationality is USA
 df[df['first_name'].notnull() & (df['nationality'] == "USA")]
 
-
 if __name__ == "__main__":
     """ main """
     # By setting sep=None and engine='python' we use the csv_sniffer to auto detect the separator
@@ -53,7 +52,7 @@ if __name__ == "__main__":
     println(df.get_values())
 
     print('----------------------------------------')
-    println(map(lambda x:  datetime.strptime(x, "%Y-%m-%d").date().strftime("%d/%m/%Y"), df[df.columns[0]]))
+    println(map(lambda x: datetime.strptime(x, "%Y-%m-%d").date().strftime("%d/%m/%Y"), df[df.columns[0]]))
     println(map(float, df['Money']))
     println(df.ix[1])
 

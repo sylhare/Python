@@ -1,4 +1,5 @@
 import csv
+
 # http://stackabuse.com/reading-and-writing-csv-files-in-python/
 
 if __name__ == "__main__":  # pragma: no cover
@@ -7,10 +8,10 @@ if __name__ == "__main__":  # pragma: no cover
     writer = csv.writer(open("output.csv", 'w'), delimiter=';')  # quoting=csv.QUOTE_ALL for quoting
     writer.writerows(reader)
 
-    #reader = list(csv.reader(open(path, "rU"), delimiter=','))
-    #writer = csv.writer(open(path, 'w'), delimiter=';')
-    #writer.writerows(row for row in reader)
-    #with open(path, "w") as f:
+    # reader = list(csv.reader(open(path, "rU"), delimiter=','))
+    # writer = csv.writer(open(path, 'w'), delimiter=';')
+    # writer.writerows(row for row in reader)
+    # with open(path, "w") as f:
     #    writer = csv.writer(f, delimiter=';')
     #    for row in reader:
     #        writer.writerow(row)
@@ -28,5 +29,3 @@ if __name__ == "__main__":  # pragma: no cover
         print(reader)
         has_header = sniffer.has_header(csvfile.read(2048))
         print(has_header)
-
-

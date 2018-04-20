@@ -17,6 +17,7 @@ rotated counter-clockwise by 90 degrees, and the frog slice starts on the
 positive y-axis.
 """
 import matplotlib.pyplot as plt
+import numpy as np
 
 # The slices will be ordered and plotted counter-clockwise.
 labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
@@ -31,8 +32,6 @@ plt.axis('equal')
 
 fig = plt.figure()
 ax = fig.gca()
-
-import numpy as np
 
 ax.pie(np.random.random(4), explode=explode, labels=labels, colors=colors,
        autopct='%1.1f%%', shadow=True, startangle=90,

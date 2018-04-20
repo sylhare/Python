@@ -1,5 +1,6 @@
 import unittest
 
+
 class AbstractTestCase(unittest.TestCase):
 
     def test_generic_input_one(self):

@@ -5,9 +5,9 @@ Created on Mon May  2 14:42:54 2016
 @author: sylvain.hareng1
 """
 
-from mpl_toolkits.mplot3d import axes3d
+# from mpl_toolkits.mplot3d import axes3d
 from matplotlib import cm
-from matplotlib.ticker import LinearLocator, FormatStrFormatter
+# from matplotlib.ticker import LinearLocator, FormatStrFormatter
 import matplotlib.pyplot as plt
 import numpy as np
 

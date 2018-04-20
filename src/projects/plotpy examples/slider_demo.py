@@ -20,6 +20,10 @@ samp = Slider(axamp, 'Amp', 0.1, 10.0, valinit=a0)
 
 
 def update(val):
+    """
+
+    :param val:
+    """
     amp = samp.val
     freq = sfreq.val
     l.set_ydata(amp * np.sin(2 * np.pi * freq * t))
@@ -34,6 +38,10 @@ button = Button(resetax, 'Reset', color=axcolor, hovercolor='0.975')
 
 
 def reset(event):
+    """
+
+    :param event:
+    """
     sfreq.reset()
     samp.reset()
 
@@ -45,6 +53,10 @@ radio = RadioButtons(rax, ('red', 'blue', 'green'), active=0)
 
 
 def colorfunc(label):
+    """
+
+    :param label:
+    """
     l.set_color(label)
     fig.canvas.draw_idle()
 

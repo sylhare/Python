@@ -7,10 +7,9 @@ Created on Sun Jun 18 17:38:11 2017
 import csv
 import json
 import io
-import csv_to_json as ctj
 
 
-def csv_to_json(path): # pragma: no cover
+def csv_to_json(path):  # pragma: no cover
     """
     Convert the csv file into a json file while removing '/uFEFF' unicode character for space
 
@@ -21,7 +20,7 @@ def csv_to_json(path): # pragma: no cover
         reader = csv.DictReader((x.replace(u"\uFEFF", u"") for x in f))
         rows = list(reader)
 
-    with open(path[:-3]+"json", 'w', encoding='utf8') as f:
+    with open(path[:-3] + "json", 'w', encoding='utf8') as f:
         f.write(json.dumps(rows, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False))
 
 
@@ -46,8 +45,8 @@ def conversion(path, delim):
                 elif row["type"] == "Dare":
                     csv_dare.append(row)
 
-            ctj.to_json("truth.json", csv_truth)
-            ctj.to_json("dare.json", csv_dare)
+            csv_to_json.to_json("truth.json", csv_truth)
+            csv_to_json.to_json("dare.json", csv_dare)
 
     except FileNotFoundError:
         print(path + " was not found")

@@ -1,6 +1,12 @@
 class Calculator(object):
 
     def add(self, x, y):
+        """
+
+        :param x:
+        :param y:
+        :return:
+        """
         number_types = (int, float, complex)
 
         if isinstance(x, number_types) and isinstance(y, number_types):
@@ -11,6 +17,7 @@ class Calculator(object):
     def subtract(self, a, b):
         """
 
+        :param a:
         :param b:
         :return:
         """
@@ -19,6 +26,7 @@ class Calculator(object):
     def multiply(self, a, b):
         """
 
+        :param a:
         :param b:
         :return:
         """
@@ -27,6 +35,7 @@ class Calculator(object):
     def divide(self, a, b):
         """
 
+        :param a:
         :param b:
         :return:
         """

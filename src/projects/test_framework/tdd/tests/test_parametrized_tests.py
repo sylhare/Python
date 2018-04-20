@@ -155,10 +155,16 @@ def function_b(string):
 class AbstractTestCase:
 
     def test_generic_input_one(self):
+        """
+
+        """
         result = self.function("input 1")
         self.assertTrue(result)
 
     def test_generic_input_two(self):
+        """
+
+        """
         result = self.function("input 2")
         self.assertTrue(result)
 
@@ -166,6 +172,11 @@ class AbstractTestCase:
 class TestsFunctionA(AbstractTestCase, unittest.TestCase):
 
     def function(self, param):
+        """
+
+        :param param: 
+        :return: 
+        """
         return function_a(param)
 
     def test_specific_input(self):
@@ -175,6 +186,11 @@ class TestsFunctionA(AbstractTestCase, unittest.TestCase):
 class TestsFunctionB(AbstractTestCase, unittest.TestCase):
 
     def function(self, param):
+        """
+
+        :param param: 
+        :return: 
+        """
         return function_b(param)
 
     def test_another_specific_input(self):

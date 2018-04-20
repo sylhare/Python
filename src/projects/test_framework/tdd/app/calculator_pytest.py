@@ -1,6 +1,6 @@
-
 class Calculator(object):
     """ New calculator function to work with pytest """
+
     def __init__(self):
         self._last_answer = 0.0
 
@@ -17,23 +17,58 @@ class Calculator(object):
         return self.last_answer
 
     def add(self, a, b):
+        """
+
+        :param a:
+        :param b:
+        :return:
+        """
         return self._do_math(a, b, add)
 
     def subtract(self, a, b):
+        """
+
+        :param a:
+        :param b:
+        :return:
+        """
         return self._do_math(a, b, subtract)
 
     def multiply(self, a, b):
+        """
+
+        :param a:
+        :param b:
+        :return:
+        """
         return self._do_math(a, b, multiply)
 
     def divide(self, a, b):
+        """
+
+        :param a:
+        :param b:
+        :return:
+        """
         return self._do_math(a, b, divide)
 
     def maximum(self, a, b):
+        """
+
+        :param a:
+        :param b:
+        :return:
+        """
         return self._do_math(a, b, maximum)
 
     def minimum(self, a, b):
-        return self._do_math(a, b, minimum)
+        """
 
+        :param a:
+        :param b:
+        :return:
+        """
+        return self._do_math(a, b, minimum)
 
 
 def add(a, b):
