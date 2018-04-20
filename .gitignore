@@ -28,3 +28,4 @@ build/
 /src/projects/test_framework/bdd/.idea/
 /src/projects/test_framework/tdd/.coverage
 /src/projects/web_connexion/.idea/
+/src/projects/test_framework/tdd/tests/.coverage
