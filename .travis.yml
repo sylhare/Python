@@ -13,15 +13,15 @@ env:
 
 python:
   - 3.5
-  - 2.7
+#  - 2.7
 
 cache: pip
 
 before_install:
   - pip install -U pip
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter # Code Climate coverage
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+#  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter # Code Climate coverage
+#  - chmod +x ./cc-test-reporter
+#  - ./cc-test-reporter before-build
 
 # command to install dependencies
 install:
