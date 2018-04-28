@@ -9,6 +9,7 @@ notifications:
 env:
   global:
     secure: NOgFqS39nEpoBcUVtNrIDWgWkh7SnBXwaasrlqth3Qneco1SS80/9LUhuM9+SSkesy2aW48F6XCpPzsj6z7rWEPQMp1K620YWLzw/8D4U0mI2uoKtuyf2AgcEKv42EKP7fhPe4Dg/PCbI24a33snFvKHKYB7ByFRMoku6YNkegpNiUdWkHI2epwVj59Ij7t9wnbC5Dtt2lSJVXgxNRd9hTp5aoLS43PCxuNu9TVnobTqmIvQKchLNtaREIqTnqO4cIRb18YNag7Y6nPKvp85NOwV6wvnVCQ3qGJ8StxMkrDkBkPSfq9JX0ngXA706EF+R386RN2Zqnz4YAlueyquGekrdHGBC3QG/wX2VSOXktBljwHLBUaGp0PvoiFoPwKL2++OzxCI5rdeRP5loe+8Rb+Gvm22WZxrZSkfM1DZDIxPvfxlBRjmmG6WxuWeaPK/McMRmgwaEVZQW+8Eo999QkEzCGvEZR3w2EOJ3q+9Oazgz2jVFwx5Xx017503iSkpHeHmd7bvce1jZLEMQ2orNdDulSi2f/e0hn8cL6TTHJvlQBMa1I0+NUzaLI3w++MTVoIS7rQMqqBPkIU+gTFGJSQdk+jrRND33PogdDbVqI6qI/9oPwf4fXrGdl3T+SPVmqaNDgy0WzqQYmjV2ZaqRZ2h44Fw4XpPjCy/MXBF/ls=
+    secure: X+IQDs7TFWX0c8YTlF54ab3IZOam12oOjy+Z7DUBR5A19jy69n9ERMMehuUgzb3lSjjaoe+HBTAR4WxJanymeaiMRt+Y9+5zjCSUMkGZSaXvqSPGcqsKBYzAyPIBguNvWcvBQW7FWgoMMV25lB3ygcgh5yWZ5nme2yC4bDKg4mZ+qxQEw6xGxbaR6+X5WPMQAsVry6zeiNPTN1tsJq9JS/wGRVjIYqFkix3mEVn/hlVw+N8LrsBSh2Z8xYcSWmvX3ENL3nJmmMZC7BwILtYJBp+dCthudILXOYFUG0/N6tx23Pd9QVJ+dBd7+lhj3dCmWsj9kh6m4126k0jRHCanhz2QE8ImCiWHFO59sAYkpXXEshY11g22E69kaohCawtaRj4AyELVyYea59M/XPF+//IasnoDsFSkgv4/ZiPZXy3XDbf4gkDHmxAKVn4SJTeJr3zXjZ8nU2KF1eK4BlF43S8j+Wbv9TU4qWm/gwidLxnDMJvc3Cpmz0vdpVoO32wBOMAZPWnPEV+Db4iF33Y3mXX+1xdYiQT57/0g6Hj1mmQ/D6Nm15ebGMJddjv89tDW0whHU2F61+uOeev1G9ubDvcm1V1ZKMucM/rj0GH2KwH/1hsi23wsRv99PL7SqQLmkBTTZiyDbHR1bC7N9lmp88sYtp9cQh8QbLEqkWzMxBk="
 
 python:
   - 3.5
@@ -27,7 +28,7 @@ install:
 
 # commands to run tests
 script:
-  - pytest -v
+  - python -m pytest -v
   - coverage run --source=. -m unittest discover
   - coverage report --omit="test*" -m # m are for missing lines not tested
   - coverage xml # For Codacy
@@ -37,5 +38,5 @@ after_success:
   - pip install nprime
   - pip install simple-lda
  # - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT    # Code Climate code coverage
- # - codecov                                                           # Codecov code coverage
+  - codecov                                                           # Codecov code coverage
   - python-codacy-coverage -r coverage.xml                            # Codacy code coverage
