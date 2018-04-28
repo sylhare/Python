@@ -15,6 +15,8 @@ python:
   - 3.5
   - 2.7
 
+cache: pip
+
 before_install:
   - pip install -U pip
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter # Code Climate coverage
@@ -32,7 +34,7 @@ script:
   - py.test --cov-report term-missing --cov -v
   - coverage run --source=. -m unittest discover
   - coverage report --omit="test*" -m # m are for missing lines not tested
- # - coverage xml # For Codacy
+  - coverage xml # For Codacy
 
 after_success:
   - pip install charpy
