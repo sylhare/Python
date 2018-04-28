@@ -29,9 +29,10 @@ install:
 # commands to run tests
 script:
   - python -m pytest -v
+  - py.test --cov-report term-missing --cov -v
   - coverage run --source=. -m unittest discover
   - coverage report --omit="test*" -m # m are for missing lines not tested
-  - coverage xml # For Codacy
+ # - coverage xml # For Codacy
 
 after_success:
   - pip install charpy
