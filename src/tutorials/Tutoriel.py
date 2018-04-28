@@ -6,6 +6,11 @@ import sys
 # Fonction affichant la table de multiplication par nb
 def table(nb,
           max=10):  # max=10 permet de fournir une valeur par défaut, pas obligé de remplir le champs pour l'utilisateur
+    """
+
+    :param nb:
+    :param max:
+    """
     i = 0
     if max < 0:
         max = 10
@@ -21,6 +26,14 @@ def table(nb,
 
 
 def fonc(a=1, b=2, c=3, d=4, e=5):
+    """
+
+    :param a:
+    :param b:
+    :param c:
+    :param d:
+    :param e:
+    """
     print("a =", a, "b =", b, "c =", c, "d =", d, "e =", e)
     # La fonction reconnait les variables ou change selon l'ordre des paramètres
 
@@ -33,6 +46,11 @@ fonc(b=35, c=38, a=4, e=9)
 
 # On redéfinit la même fonction
 def fonc(v):
+    """
+
+    :param v:
+    :return:
+    """
     print("Pas de surcharge de fonction", v)
     return v * v
 
@@ -47,7 +65,11 @@ f(5)
 
 
 def tronc3(flottant):  # Troncature 3 chiffres après la virgules
+    """
 
+    :param flottant:
+    :return:
+    """
     if type(flottant) is not float:
         raise TypeError("Le paramètre attendu doit être un flottant")
     flottant = str(flottant)
@@ -57,6 +79,11 @@ def tronc3(flottant):  # Troncature 3 chiffres après la virgules
 
 # Paramètres libres
 def fonction_inconnue(*en_liste, **en_dictionnaire):
+    """
+
+    :param en_liste:
+    :param en_dictionnaire:
+    """
     print(0)
 
 
@@ -66,12 +93,22 @@ def paramStar(*parametres):  # * indique que tous les paramètres seront placé 
 
 
 def param2Star(**parametres_nommes):  # Récupère les paramètres assignés dans un dictionnaire
+    """
+
+    :param parametres_nommes:
+    """
     print("J'ai reçu en paramètres nommés : {}.".format(parametres_nommes))  # (p=4, j=8) ->  {'p': 4, 'j': 8}
 
 
 # Refaire une fonction print (qui affiche tout les paramètres à l'écran)
 # def afficher1(*parameters, sep=' ', end='\n', file=sys.stdout):
 def afficher(*parameters, sep=' ', fin='\n'):
+    """
+
+    :param parameters:
+    :param sep:
+    :param fin:
+    """
     parameters = list(parameters)  # Converti le tuple en liste pour plus de flexibilité
 
     for i, parameter in enumerate(parameters):  # Transforme chaque élément en string
@@ -82,10 +119,16 @@ def afficher(*parameters, sep=' ', fin='\n'):
 
 
 def fest():
+    """
+
+    """
     print("Let's party")
 
 
 def bird():
+    """
+
+    """
     print("I believe I can fly")
 
 
@@ -121,12 +164,27 @@ def iplus():
 
 # Decorateur, pour modifier facilement le comportement d'une fonction
 def decorateur(fonction):
+    """
+
+    :param fonction:
+    :return:
+    """
     print("Notre décorateur est appelé avec en paramètre la fonction {0}".format(fonction))
     return fonction
 
 
 def decorator(fct):
+    """
+
+    :param fct:
+    :return:
+    """
+
     def fct_modified():
+        """
+
+        :return:
+        """
         print("We are calling {0}".format(fct))
         return fct()
 
@@ -135,7 +193,22 @@ def decorator(fct):
 
 @decorator
 def fct_test():
+    """
+
+    """
     print("It's a trap!")
+
+
+# Decorateur
+# On peut mettre le decorateur directement en mettant un @
+@decorateur
+def salut():
+    """Fonction modifiée par le décorateur"""
+    print("Salut !")
+
+
+# Ou on peut appeler une fonction par le décorateur pour la modifier
+decorateur(salut)
 
 
 def obsolete(fonction_origine):
@@ -143,6 +216,9 @@ def obsolete(fonction_origine):
     est obsolète"""
 
     def fonction_modifiee():
+        """
+
+        """
         raise RuntimeError("la fonction {0} est obsolète !".format(fonction_origine))
 
     return fonction_modifiee
@@ -189,6 +265,9 @@ def controler_temps(nb_secs):
 @controler_temps(4)
 @decorateur
 def attendre():
+    """
+
+    """
     input("Appuyez sur Entrée...")
 
 

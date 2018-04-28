@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys  # Importe les fonctions systèmes
-import os
+# import os
 
 # System computing
 sys.stdout.write("Un test\n")

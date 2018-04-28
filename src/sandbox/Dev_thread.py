@@ -10,7 +10,7 @@ import time
 from threading import Thread, RLock
 
 
-#==============================================================================
+# ==============================================================================
 # os.getcwd() 
 # file = open("newfile.txt", "w")
 # file.write('\n'+"hello world in the new file")
@@ -23,12 +23,12 @@ from threading import Thread, RLock
 # #file.readlines() give back an array with the data
 # file.close()
 # 
-#==============================================================================
+# ==============================================================================
 
-##Multi Threading
-#print("Avant le sleep...")
-#time.sleep(5) #Met en pause le programe
-#print("Après le sleep.")
+## Multi Threading
+# print("Avant le sleep...")
+# time.sleep(5) #Met en pause le programe
+# print("Après le sleep.")
 
 class Afficheur(Thread):
     """Thread chargé simplement d'afficher une lettre dans la console."""
@@ -42,12 +42,13 @@ class Afficheur(Thread):
         i = 0
         while i < 5:
             sys.stdout.write(self.lettre)
-            sys.stdout.flush()#♣Print the letters as they arrives
+            sys.stdout.flush()  # ♣Print the letters as they arrives
             attente = 0.2
             attente += random.randint(1, 60) / 100
             time.sleep(attente)
             i += 1
-            
+
+
 # Création des threads
 thread_1 = Afficheur("1")
 thread_2 = Afficheur("2")
@@ -61,6 +62,7 @@ thread_1.join()
 thread_2.join()
 
 print('\n')
+
 
 class Afficheur2(Thread):
     """Thread chargé simplement d'afficher un mot dans la console."""
@@ -98,8 +100,8 @@ print('\n')
 
 verrou = RLock()
 
-class Afficheur3(Thread):
 
+class Afficheur3(Thread):
     """Thread chargé simplement d'afficher un mot dans la console."""
 
     def __init__(self, mot):
@@ -118,6 +120,7 @@ class Afficheur3(Thread):
                     attente += random.randint(1, 60) / 100
                     time.sleep(attente)
             i += 1
+
 
 # Création des threads
 thread_1 = Afficheur3("canard")

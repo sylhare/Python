@@ -85,7 +85,7 @@ class Test:
 
         """
 
-    ## Classes That Act Like Functions
+    ##  Classes That Act Like Functions
     def __my_instance__(self):
         """
         my_instance(x)
@@ -124,7 +124,7 @@ class Test:
 
 
 ### Example ###
-class Animal():
+class Animal:
     """
     Test class to create an animal class in python
 
@@ -154,7 +154,7 @@ class Animal():
             return self.__color__
 
 
-class Magic():
+class Magic(object):
     """
     Magical test class
     """
@@ -169,6 +169,10 @@ class Magic():
 
     @staticmethod  # Means that it doesn't use any attributes of the class
     def magic_word(word):
+        """
+
+        :param word:
+        """
         print("abracada " + word)
 
 
@@ -185,6 +189,9 @@ class Cat(Animal):
 
     @staticmethod
     def purr():
+        """
+
+        """
         print("Purr...")
 
 
@@ -196,6 +203,9 @@ class Dog(Animal):
 
     @staticmethod
     def bark():
+        """
+
+        """
         print("Woof!")
 
 
@@ -207,6 +217,9 @@ class Bird(Animal, Magic):
 
     @staticmethod
     def tweet():
+        """
+
+        """
         print("piiip")
 
 

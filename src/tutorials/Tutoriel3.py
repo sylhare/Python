@@ -6,7 +6,7 @@ https://openclassrooms.com/courses/apprenez-a-programmer-en-python/les-propriete
 """
 
 
-class Personne:
+class Person:
     """Classe définissant une personne caractérisée par :
     - son nom ;
     - son prénom ;
@@ -29,7 +29,7 @@ class Personne:
 
     def _set_lieu_residence(self, nouvelle_residence):
         """Méthode appelée quand on souhaite modifier le lieu de résidence"""
-        print("Attention, il semble que {} déménage à {}.".format( \
+        print("Attention, il semble que {} déménage à {}.".format(
             self.firstName, nouvelle_residence))
         self._lieu_residence = nouvelle_residence
 
@@ -54,7 +54,7 @@ class Personne:
             self.firstName, self.name, self.age)
 
 
-Simon = Personne("Clarkson", "Simon")  # Puisque property, pas besoin de get et set pour assigner les valeurs
+Simon = Person("Clarkson", "Simon")  # Puisque property, pas besoin de get et set pour assigner les valeurs
 Simon.name
 Simon.firstName
 Simon.age
@@ -75,6 +75,9 @@ class Protege:
         self.c = 3
 
     def save(self):
+        """
+
+        """
         print('saved')
 
     def __getattr__(self, attributeName):
@@ -100,7 +103,10 @@ pro.e  # Pas d'attribut e défini donc __getattr__
 object.__delattr__(pro, 'a')  # Supprime l'attribut a, avec del on a une erreur
 
 
-class MaClasse():
+class MaClasse:
+    """
+
+    """
     def __init__(self):
         """On crée quelques attributs par défaut"""
         self.val = 1
@@ -196,13 +202,13 @@ class Duree:
         return self
 
     def __floordiv__(self, entier):  # Surcharge de l'opérateur // (division entière)
-        return (self.sec // entier)
+        return self.sec // entier
 
     def __mod__(self, entier):  # Surcharge de l'opérateur % (modulo)
-        return (self.sec % entier)
+        return self.sec % entier
 
     def __pow__(self, entier):  # Surcharge de l'opérateur ** (puissance)
-        return (self.sec ** entier)
+        return self.sec ** entier
 
         # Les Methodes de Comparaison
 

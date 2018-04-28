@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-class Personne:
+
+class Personne(object):
     """Classe définissant une personne caractérisée par :
     - son nom ;
     - son prénom ;
@@ -23,7 +24,7 @@ class Personne:
 
     def _set_lieu_residence(self, nouvelle_residence):
         """Méthode appelée quand on souhaite modifier le lieu de résidence"""
-        print("Attention, il semble que {} déménage à {}.".format( \
+        print("Attention, il semble que {} déménage à {}.".format(
             self.prenom, nouvelle_residence))
         self._lieu_residence = nouvelle_residence
 

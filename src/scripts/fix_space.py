@@ -29,6 +29,7 @@ def main():
             print("file not found: %s" % sys.argv[1])
             sys.exit(1)
 
+
 def main_reboot():
     """
     Remove trailing spaces for all files in the current directory
@@ -42,13 +43,14 @@ def main_reboot():
             if file[-3:] == '.py':
                 rm_trailing_space(file)
 
+
 def user_input():
     """
     Ask validation before doing anything
 
     """
-    yes = set(['yes','y', 'yup', ''])
-    no = set(['no','n'])
+    yes = {'yes', 'y', 'yup', ''}
+    no = {'no', 'n'}
 
     while True:
         print("continue? [y\n]")
@@ -73,7 +75,7 @@ def rm_trailing_space(path):
             [file.write('%s\n' % line) for line in new]
         print("[ OK ] {0}".format(path))
     except Exception as e:
-        print("[FAIL] {0} {1}".format(path, str(type(e).__name__ )))
+        print("[FAIL] {0} {1}".format(path, str(type(e).__name__)))
 
 
 if __name__ == "__main__":

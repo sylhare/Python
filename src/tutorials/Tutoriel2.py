@@ -10,8 +10,7 @@ Dans ce répertoire, vous pouvez soit :
 """
 # import fonctionne comme dans java
 import math  # Importe une bibliothèque de fonctions
-import Tutoriel
-import timeit
+# import timeit
 
 import sys
 
@@ -192,7 +191,7 @@ print(inv, '\n')
 temp1 = list(range(100))
 temp2 = [i * 2 for i in range(50)]
 list(set(temp1) - set(temp2))  # Tiny bit longer
-s = set(temp2);
+s = set(temp2)
 [x for x in temp1 if x not in s]  # fastest
 [item for item in temp1 if item not in temp2]  # Longest
 
@@ -243,15 +242,3 @@ parametres = {"sep": " >> ", "end": " -\n"}
 print("Voici", "un", "exemple", "d'appel", **parametres)  # ** permet de formater selon le parametre
 print("Voici", "un", "exemple", "d'appel", sep=" >> ", end=" -\n")
 print("\n")
-
-
-# Decorateur
-# On peut mettre le decorateur directement en mettant un @
-@Tutoriel.decorateur
-def salut():
-    """Fonction modifiée par le décorateur"""
-    print("Salut !")
-
-
-# Ou on peut appeler une fonction par le décorateur pour la modifier
-Tutoriel.decorateur(salut)

@@ -17,10 +17,23 @@ y1 = np.arange(-5, 5, 0.5)
 
 
 def disc(x, y):
+    """
+
+    :param x:
+    :param y:
+    :return:
+    """
     return (1 + x) ** 2 + (1 + y) ** 2
 
 
 def cone(x, y, z):
+    """
+
+    :param x:
+    :param y:
+    :param z:
+    :return:
+    """
     return np.sqrt((1 + x) ** 2 + (1 + y) ** 2)
 
 
