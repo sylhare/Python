@@ -1,6 +1,6 @@
 from lettuce import *
 from nose.tools import assert_equals
-from app.calculator import Calculator
+from ...app.calculator import Calculator
 
 
 @step(u'I am using the calculator')

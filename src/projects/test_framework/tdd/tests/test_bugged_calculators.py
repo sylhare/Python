@@ -1,5 +1,5 @@
 import unittest
-from app.bugged_calculator import BuggedCalculator
+from ..app.bugged_calculator import BuggedCalculator
 
 
 class TddInPythonExample(unittest.TestCase):

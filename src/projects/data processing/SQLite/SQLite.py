@@ -10,6 +10,7 @@ import sqlite3
 
 class DBManager(object):
     """ DBManager """
+
     def __init__(self, db):
         self.conn = sqlite3.connect(db)
         self.conn.execute('pragma foreign_keys = on')

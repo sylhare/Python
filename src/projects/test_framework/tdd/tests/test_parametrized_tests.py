@@ -114,7 +114,7 @@ class ClassOdd:
             return False
 
 
-class TestOdd:
+class TestOdd(object):
     """ test odd with nosetest"""
 
     def runTest(self):
@@ -156,14 +156,14 @@ class AbstractTestCase:
 
     def test_generic_input_one(self):
         """
-
+        test
         """
         result = self.function("input 1")
         self.assertTrue(result)
 
     def test_generic_input_two(self):
         """
-
+        test
         """
         result = self.function("input 2")
         self.assertTrue(result)

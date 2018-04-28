@@ -14,7 +14,7 @@ import os  # On importe le module os qui dispose de variables
 # et de fonctions utiles pour dialoguer avec votre
 # système d'exploitation
 # from Tutoriel import *  #Un peu bancale
-from Tutoriel import f  # Importe la fonction f() deTutoriel.py et lance toutes les instructions
+from ..tutorials.Tutoriel import f  # Importe la fonction f() deTutoriel.py et lance toutes les instructions
 
 year = input("Saisissez une année :")  # recupére une variable type string du clavier
 try:
