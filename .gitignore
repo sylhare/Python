@@ -31,3 +31,4 @@ build/
 /src/projects/test_framework/tdd/tests/.coverage
 /dist/
 /python.egg-info/
+.cache/*

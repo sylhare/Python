@@ -6,10 +6,9 @@ notifications:
    email: false
 
 # Codacy and Code Climate token for coverage
-#env:
-  #global:
-    #secure:
-    #secure:
+env:
+  global:
+    secure: NOgFqS39nEpoBcUVtNrIDWgWkh7SnBXwaasrlqth3Qneco1SS80/9LUhuM9+SSkesy2aW48F6XCpPzsj6z7rWEPQMp1K620YWLzw/8D4U0mI2uoKtuyf2AgcEKv42EKP7fhPe4Dg/PCbI24a33snFvKHKYB7ByFRMoku6YNkegpNiUdWkHI2epwVj59Ij7t9wnbC5Dtt2lSJVXgxNRd9hTp5aoLS43PCxuNu9TVnobTqmIvQKchLNtaREIqTnqO4cIRb18YNag7Y6nPKvp85NOwV6wvnVCQ3qGJ8StxMkrDkBkPSfq9JX0ngXA706EF+R386RN2Zqnz4YAlueyquGekrdHGBC3QG/wX2VSOXktBljwHLBUaGp0PvoiFoPwKL2++OzxCI5rdeRP5loe+8Rb+Gvm22WZxrZSkfM1DZDIxPvfxlBRjmmG6WxuWeaPK/McMRmgwaEVZQW+8Eo999QkEzCGvEZR3w2EOJ3q+9Oazgz2jVFwx5Xx017503iSkpHeHmd7bvce1jZLEMQ2orNdDulSi2f/e0hn8cL6TTHJvlQBMa1I0+NUzaLI3w++MTVoIS7rQMqqBPkIU+gTFGJSQdk+jrRND33PogdDbVqI6qI/9oPwf4fXrGdl3T+SPVmqaNDgy0WzqQYmjV2ZaqRZ2h44Fw4XpPjCy/MXBF/ls=
 
 python:
   - 3.5
@@ -28,6 +27,7 @@ install:
 
 # commands to run tests
 script:
+  - pytest -v
   - coverage run --source=. -m unittest discover
   - coverage report --omit="test*" -m # m are for missing lines not tested
   - coverage xml # For Codacy
@@ -36,6 +36,6 @@ after_success:
   - pip install charpy
   - pip install nprime
   - pip install simple-lda
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT    # Code Climate code coverage
-  - codecov                                                           # Codecov code coverage
+ # - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT    # Code Climate code coverage
+ # - codecov                                                           # Codecov code coverage
   - python-codacy-coverage -r coverage.xml                            # Codacy code coverage

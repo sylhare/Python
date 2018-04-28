@@ -7,8 +7,26 @@ import unittest
 import os
 
 
+def not_found():
+    """ raise FileNotFoundError """
+    raise FileNotFoundError
+
+
 class MyException(Exception):
     """ Custom exception """
+    pass
+
+
+class BetterException(Exception):
+    """ Better exception """
+
+    def __init__(self, msg=''):
+        # self.msg = msg
+        super(BetterException, self).__init__(msg)
+        # log(msg)  # use your logging things here
+
+    # def __str__(self):
+    #     return self.msg
 
 
 def my_function(path):
@@ -46,6 +64,10 @@ def my_function_wrapper(path):
 
 
 class Test(unittest.TestCase):
+    @unittest.expectedFailure
+    def test_not_found(self):
+        self.assertRaises(FileNotFoundError, not_found())
+
     def test_function_typeError(self):
         self.assertRaises(TypeError, my_function(2))
 
@@ -54,7 +76,14 @@ class Test(unittest.TestCase):
         with self.assertRaises(MyException):
             my_function(os.getcwd())
 
-    @unittest.skip
+    def test_function_myException_again(self):
+        print("[START]")
+        try:
+            my_function(os.getcwd())
+        except MyException as err:
+            print("{} {}".format(err.__class__, err))
+        print("[END]")
+
     def test_function_nothandling_myException(self):
         with self.assertRaises(MyException):
             my_function_no_handling(os.getcwd())
@@ -64,6 +93,13 @@ class Test(unittest.TestCase):
         with self.assertRaises(MyException):
             my_function_wrapper(os.getcwd())
 
+
 if __name__ == "__main__":
-    #my_function('str')
+    # my_function('str')
     unittest.main()
+
+    print(' ----- here ----- ')
+    try:
+        raise BetterException('test')
+    except BetterException as e:
+        print(e)
