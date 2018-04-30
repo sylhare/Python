@@ -19,7 +19,7 @@ You can also do it the classic way, by downloading pyhton directly from there we
 Python should have already been installed if you're using a linux distribution. You can always check which version is intalled:
 
 ```bash
-	python --version
+python --version
 ```
 
 ### Python on Windows
@@ -29,25 +29,25 @@ Assuming that you've installed python via Anaconda, or manually (setting the env
 Start a python prompt on the command prompt:
 
 ```bash
-	python
+python
 ```
 
 Install dependencies via pip on a command prompt:
 
 ```bash
-	python -m pip install package
+python -m pip install package
 ```
    
 Uninstall with pip through:
 
 ```bash
-    python -m pip uninstall package
+python -m pip uninstall package
 ```
 
 Install dependencies through a proxy
 
 ```bash
-	python -m pip install --proxy http://user:password@proxyserver:port package
+python -m pip install --proxy http://user:password@proxyserver:port package
 ```
 
 - Replace Package by the *package* you want to install
@@ -59,7 +59,7 @@ Install dependencies through a proxy
 Run a python script on a command prompt (windows):
 
 ```bash
-	python.exe script.py arg1
+python.exe script.py arg1
 ```
 
 ### Creating Python packages
@@ -78,50 +78,50 @@ To upload your project you will need:
 - Create an account on Pypi
 - Structure your code:
     
-    ```bash
-    package-name             # Root repository folder
-    ├── package-name
-    |   ├── __init__.py	     # To make a python directory, for imports                           
-    |   └── module.py	     # Module of the package	  
-    ├── tests
-    |   ├── __init__.py	     
-    |   └── test.py          # Tests of the module
-    └── setup.py
-    ```
+```bash
+package-name             # Root repository folder
+├── package-name
+|   ├── __init__.py	     # To make a python directory, for imports                           
+|   └── module.py	     # Module of the package	  
+├── tests
+|   ├── __init__.py	     
+|   └── test.py          # Tests of the module
+└── setup.py
+```
 
 - Create a `setup.py` usign the [guidelines on how to package and distribute your project](https://packaging.python.org/tutorials/distributing-packages/).
 
-    ```python
-    from setuptools import setup
+```python
+from setuptools import setup
 
-    setup(name='package-name',
-          version='0.1',
-          description='Package description',
-          url='http://link.to.the.source.code',
-          author='name',
-          author_email='name@example.com',
-          license='MIT',
-          packages=['package-name'],
-          zip_safe=False)
-    ```
+setup(name='package-name',
+      version='0.1',
+      description='Package description',
+      url='http://link.to.the.source.code',
+      author='name',
+      author_email='name@example.com',
+      license='MIT',
+      packages=['package-name'],
+      zip_safe=False)
+```
     
 - Package your project into a `.tar`:
 
-    ```bash
-    python setup.py sdist
-    ```
+```bash
+python setup.py sdist
+```
     
 - Download and install `twine` which will allow you to safely upload your project
 
-    ```bash
-    pip install twine
-    ```
+```bash
+pip install twine
+```
     
 - Upload your project
 
-    ```bash
-    python -m twine upload dist/*
-    ```
+```bash
+python -m twine upload dist/*
+```
 
 > When you upload your project, it might be refused due to naming problem. If that's the case you will have to rename your project.
 

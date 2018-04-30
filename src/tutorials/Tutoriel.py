@@ -266,6 +266,9 @@ def controler_temps(nb_secs):
 @decorateur
 def attendre():
     """
+    Demo
+    En appuyant rapidement sur entrée, rien ne se passe
+    En attendant plus de 4s avant d'appuyer sur entrée, on a le temps d'execution de la fonction
 
     """
     input("Appuyez sur Entrée...")
