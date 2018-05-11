@@ -1,0 +1,161 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a sample server Contactstore server.\n\nmultiline description\n"
+  version: "1.0.0"
+  title: "Sample contact"
+  contact:
+    name: "my@email.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "myurl.com"
+basePath: "/v1"
+schemes:
+- "http"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /contacts:
+    get:
+      tags:
+      - "contact"
+      summary: "list of all contact"
+      description: "Returns list of contact"
+      operationId: "get_contacts"
+      parameters:
+      - name: "limit"
+        in: "query"
+        description: "limit of return"
+        required: false
+        type: "integer"
+        default: 11
+        maximum: 10000
+        minimum: 11
+      responses:
+        200:
+          description: "List all contacts"
+          schema:
+            type: "array"
+            title: "Contacts"
+            items:
+              $ref: "#/definitions/Contact"
+      x-swagger-router-controller: "swagger_server.controllers.contact_controller"
+    post:
+      tags:
+      - "contact"
+      summary: "Add a new contact"
+      description: "description for add new contact"
+      operationId: "add_contact"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Contact object that needs to be added to the store"
+        required: false
+        schema:
+          $ref: "#/definitions/Contact"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.contact_controller"
+  /contact/{contactId}:
+    get:
+      tags:
+      - "contact"
+      summary: "Find contact by ID"
+      description: "Returns a contact"
+      operationId: "get_contact_by_id"
+      parameters:
+      - name: "contactId"
+        in: "path"
+        description: "ID of contact that needs to be fetched"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Contact"
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "contact not found"
+      x-swagger-router-controller: "swagger_server.controllers.contact_controller"
+    post:
+      tags:
+      - "contact"
+      summary: "Updates a contact in the store with form data"
+      description: ""
+      operationId: "update_contact"
+      parameters:
+      - name: "contactId"
+        in: "path"
+        description: "ID of contact that needs to be updated"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Contact object that needs to be added to the store"
+        required: false
+        schema:
+          $ref: "#/definitions/Contact"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.contact_controller"
+    delete:
+      tags:
+      - "contact"
+      summary: "Deletes a contact"
+      description: ""
+      operationId: "delete_contact"
+      parameters:
+      - name: "contactId"
+        in: "path"
+        description: "Contact id to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        400:
+          description: "Invalid contact value"
+      x-swagger-router-controller: "swagger_server.controllers.contact_controller"
+definitions:
+  Contact:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      username:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      email:
+        type: "string"
+      password:
+        type: "string"
+      phone:
+        type: "string"
+      userStatus:
+        type: "integer"
+        format: "int32"
+        description: "User Status"
+    example:
+      firstName: "firstName"
+      lastName: "lastName"
+      password: "password"
+      userStatus: 6
+      phone: "phone"
+      id: 0
+      email: "email"
+      username: "username"
