@@ -113,6 +113,28 @@ def zip_demo():
     print('v =', v)
 
 
+def filter_in_dict(points):
+    """
+
+    :param points:
+    :return:
+    """
+    return {k: v for k, v in points.items() if v is not None}
+
+
+def lambda_in_a_map_and_a_dict():
+    """
+    filter in a list of dict
+    """
+    d = [{'test': None, 'dope': 'yeah'},
+         {'test': 2, 'dope': 'yahou'},
+         {'test': 3, 'dope': None}]
+
+    d_s = map(lambda x: filter_in_dict(x), d)
+
+    print(list(d_s))
+
+
 if __name__ == "__main__":
     lambda_simple()
     lambda_dictionary()
