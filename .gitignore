@@ -32,3 +32,4 @@ build/
 /dist/
 /python.egg-info/
 .cache/*
+.pytest_cache/*
