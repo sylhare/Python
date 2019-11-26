@@ -1,0 +1,11 @@
+# System
+.DS_Store
+MANIFEST
+*.pyc
+
+# IDE
+.idea/*
+
+# Testing
+.tox/*
+.pytest_cache/*
