@@ -5,8 +5,8 @@ Created on Sun Jun 18 17:38:11 2017
 @author: syl
 """
 import csv
-import json
 import io
+import json
 
 
 def csv_to_json(path):  # pragma: no cover

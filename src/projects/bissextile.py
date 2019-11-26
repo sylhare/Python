@@ -11,6 +11,7 @@ Programme Simple, année bissextile ou non
 import \
     math  # Importe toutes les fonctions deTutoriel.py et lance toutes les instructions (contenu dans le même répertoire)
 import os  # On importe le module os qui dispose de variables
+
 # et de fonctions utiles pour dialoguer avec votre
 # système d'exploitation
 # from Tutoriel import *  #Un peu bancale

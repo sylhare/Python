@@ -1,4 +1,5 @@
 import unittest
+
 from ..app.bugged_calculator import BuggedCalculator
 
 

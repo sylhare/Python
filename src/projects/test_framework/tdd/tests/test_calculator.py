@@ -22,6 +22,7 @@ at the beginning, so that it may be picked up and executed by the nosetest runne
 """
 
 import unittest
+
 from ..app.calculator import Calculator
 
 

@@ -1,7 +1,8 @@
-import unittest
 import datetime
-from ..tests import *
+import unittest
+
 from ..converter.converter import *
+from ..tests import *
 
 
 class TestConverter(unittest.TestCase):

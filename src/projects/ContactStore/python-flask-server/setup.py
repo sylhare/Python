@@ -1,6 +1,5 @@
 # coding: utf-8
 
-import sys
 from setuptools import setup, find_packages
 
 NAME = "swagger_server"
@@ -32,4 +31,3 @@ setup(
     This is a sample server Contactstore server.  multiline description 
     """
 )
-

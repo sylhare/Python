@@ -7,12 +7,11 @@ ZCasino
 @Site: https://openclassrooms.com/courses/apprenez-a-programmer-en-python/tp-tous-au-zcasino
 """
 
+import math
 import os
 import random
-from random import randrange
-import math
 from math import ceil
-
+from random import randrange
 
 print("Casino Simulation")
 print("Do casino() for my fonction and correction() for the intended one ...")

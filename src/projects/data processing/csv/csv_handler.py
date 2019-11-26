@@ -9,13 +9,13 @@ Created on Mon Nov 21 06:34:29 2016
 """
 # import sys
 import csv
-import io
-from collections import defaultdict
-# import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.dates import DateFormatter
 # from matplotlib.dates import DayLocator, HourLocator
 import datetime
+import io
+# import numpy as np
+import matplotlib.pyplot as plt
+from collections import defaultdict
+from matplotlib.dates import DateFormatter
 
 # -- WRITE CSV -- #
 c = csv.writer(open("test.csv", "wt"))  # wt write in text mode
@@ -57,17 +57,15 @@ with open("test.csv", "rt") as f:
             columns[k].append(v)  # append the value into the appropriate list
             # based on column name k
 
-
 with io.open("test.csv", 'r', encoding='utf-8', newline='') as f:
     sniffer = csv.Sniffer()
     dialect = sniffer.sniff(f.readline(), [',', ';'])  # Check for the delimiter
-    f.seek(0)                                          # Go back at the beginning of the file
+    f.seek(0)  # Go back at the beginning of the file
 
     # reader = csv.reader(map(lambda x: x.replace(u"\uFEFF", u""), f), dialect)
     reader = csv.reader((x.replace(u"\uFEFF", u"") for x in f), dialect)
 
     rows = list(reader)
-
 
 # -- WORK WITH CSD DATA -- #
 dates = columns['Date']

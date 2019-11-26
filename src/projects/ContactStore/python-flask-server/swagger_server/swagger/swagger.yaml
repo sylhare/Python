@@ -12,28 +12,28 @@ info:
 host: "myurl.com"
 basePath: "/v1"
 schemes:
-- "http"
+  - "http"
 consumes:
-- "application/json"
+  - "application/json"
 produces:
-- "application/json"
+  - "application/json"
 paths:
   /contacts:
     get:
       tags:
-      - "contact"
+        - "contact"
       summary: "list of all contact"
       description: "Returns list of contact"
       operationId: "get_contacts"
       parameters:
-      - name: "limit"
-        in: "query"
-        description: "limit of return"
-        required: false
-        type: "integer"
-        default: 11
-        maximum: 10000
-        minimum: 11
+        - name: "limit"
+          in: "query"
+          description: "limit of return"
+          required: false
+          type: "integer"
+          default: 11
+          maximum: 10000
+          minimum: 11
       responses:
         200:
           description: "List all contacts"
@@ -45,21 +45,21 @@ paths:
       x-swagger-router-controller: "swagger_server.controllers.contact_controller"
     post:
       tags:
-      - "contact"
+        - "contact"
       summary: "Add a new contact"
       description: "description for add new contact"
       operationId: "add_contact"
       consumes:
-      - "application/json"
+        - "application/json"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - in: "body"
-        name: "body"
-        description: "Contact object that needs to be added to the store"
-        required: false
-        schema:
-          $ref: "#/definitions/Contact"
+        - in: "body"
+          name: "body"
+          description: "Contact object that needs to be added to the store"
+          required: false
+          schema:
+            $ref: "#/definitions/Contact"
       responses:
         405:
           description: "Invalid input"
@@ -67,17 +67,17 @@ paths:
   /contact/{contactId}:
     get:
       tags:
-      - "contact"
+        - "contact"
       summary: "Find contact by ID"
       description: "Returns a contact"
       operationId: "get_contact_by_id"
       parameters:
-      - name: "contactId"
-        in: "path"
-        description: "ID of contact that needs to be fetched"
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: "contactId"
+          in: "path"
+          description: "ID of contact that needs to be fetched"
+          required: true
+          type: "integer"
+          format: "int64"
       responses:
         200:
           description: "successful operation"
@@ -90,39 +90,39 @@ paths:
       x-swagger-router-controller: "swagger_server.controllers.contact_controller"
     post:
       tags:
-      - "contact"
+        - "contact"
       summary: "Updates a contact in the store with form data"
       description: ""
       operationId: "update_contact"
       parameters:
-      - name: "contactId"
-        in: "path"
-        description: "ID of contact that needs to be updated"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        description: "Contact object that needs to be added to the store"
-        required: false
-        schema:
-          $ref: "#/definitions/Contact"
+        - name: "contactId"
+          in: "path"
+          description: "ID of contact that needs to be updated"
+          required: true
+          type: "string"
+        - in: "body"
+          name: "body"
+          description: "Contact object that needs to be added to the store"
+          required: false
+          schema:
+            $ref: "#/definitions/Contact"
       responses:
         405:
           description: "Invalid input"
       x-swagger-router-controller: "swagger_server.controllers.contact_controller"
     delete:
       tags:
-      - "contact"
+        - "contact"
       summary: "Deletes a contact"
       description: ""
       operationId: "delete_contact"
       parameters:
-      - name: "contactId"
-        in: "path"
-        description: "Contact id to delete"
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: "contactId"
+          in: "path"
+          description: "Contact id to delete"
+          required: true
+          type: "integer"
+          format: "int64"
       responses:
         400:
           description: "Invalid contact value"

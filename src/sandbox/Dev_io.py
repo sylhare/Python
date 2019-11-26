@@ -5,10 +5,10 @@ Created on Tue Nov 24 19:44:52 2015
 """
 import os
 import pickle  # Pour enregistrer et récupèrer des fichiers
+from os.path import dirname, abspath
+
 from ..tutorials import Tutoriel
 from ..tutorials.Tutoriel import f  # Importe la fonction f() deTutoriel
-from os.path import dirname, abspath
-import os
 
 # Test des imports
 Tutoriel.table(5)  # Appel la fonction

@@ -10,10 +10,9 @@ In addition to the basic histogram, this demo shows a few optional features:
     * Setting the opacity (alpha value).
 
 """
-import numpy as np
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
-
+import numpy as np
 
 # example data
 mu = 100  # mean of distribution

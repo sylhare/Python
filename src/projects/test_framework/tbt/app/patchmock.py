@@ -1,4 +1,3 @@
-import unittest
 import mock
 import sys
 
@@ -11,6 +10,7 @@ if __name__ == '__main__':
             print("Impossible, there is no python without os module!")
 
     import os
+
     print(os.getpid())
 
     with mock.patch.dict(os.environ, clear=True):

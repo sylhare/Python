@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import sys
-
 
 # Fonction affichant la table de multiplication par nb
 def table(nb,

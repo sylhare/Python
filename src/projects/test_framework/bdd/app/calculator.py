@@ -1,4 +1,3 @@
-
 class Calculator(object):
     """ Calculator class"""
 

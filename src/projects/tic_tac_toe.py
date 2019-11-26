@@ -10,10 +10,10 @@ Tic Tac Toe developped based on the instruction from the Harvard online class:
 
 """
 
+import matplotlib.pyplot as plt
 import numpy
 import random
 import time
-import matplotlib.pyplot as plt
 
 
 def create_board():

@@ -8,9 +8,9 @@ https://www.dataquest.io/blog/pandas-cheat-sheet/
 
 """
 
+import numpy as np
 import pandas
 import pandas as pd
-import numpy as np
 from datetime import datetime
 
 

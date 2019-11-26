@@ -7,8 +7,8 @@
 #    python simple-https-server.py
 # then in your browser, visit:
 #    https://localhost:62001
-import ssl
 import socket
+import ssl
 from BaseHTTPServer import HTTPServer
 from SimpleHTTPServer import SimpleHTTPRequestHandler
 

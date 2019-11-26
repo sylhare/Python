@@ -108,7 +108,7 @@ chaine = str()  # Pour créer un objet de la classe string (chaine de charactere
 chaine = "NE CRIE PAS SI FORT !"
 print(chaine)
 print(
-    "En minuscule : " + chaine.lower() + " en majuscule " + chaine)  # Sort la chaine en minuscule mais ne la change pas
+        "En minuscule : " + chaine.lower() + " en majuscule " + chaine)  # Sort la chaine en minuscule mais ne la change pas
 
 # Avec format, on peut choisir l'ordre des infos dans print
 prenom = "Paul"
@@ -239,6 +239,6 @@ for cle, valeur in fruits.items():  # Parcours les clefs et valeurs d'un diction
 
 # Sep pour choisir le separeur, et en end pour dire quoi mettre à la fin
 parametres = {"sep": " >> ", "end": " -\n"}
-print("Voici", "un", "exemple", "d'appel", **parametres)  # ** permet de formater selon le parametre
+print("Voici", "un", "exemple", "d'appel", ** parametres)  # ** permet de formater selon le parametre
 print("Voici", "un", "exemple", "d'appel", sep=" >> ", end=" -\n")
 print("\n")

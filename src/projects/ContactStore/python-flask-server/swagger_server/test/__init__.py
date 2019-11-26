@@ -1,8 +1,6 @@
-import logging
-
 import connexion
+import logging
 from flask_testing import TestCase
-
 from swagger_server.encoder import JSONEncoder
 
 

@@ -3,7 +3,6 @@
 Created on Thu Apr 28 18:06:13 2016
 
 """
-import os
 import random
 import sys
 import time

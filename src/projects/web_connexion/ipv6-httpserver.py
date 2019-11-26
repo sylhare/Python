@@ -2,6 +2,7 @@ import socket
 from BaseHTTPServer import HTTPServer
 from SimpleHTTPServer import SimpleHTTPRequestHandler
 
+
 # from http.server import HTTPServer, SimpleHTTPRequestHandler for python 3
 
 

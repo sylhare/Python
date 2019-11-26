@@ -1,9 +1,6 @@
 # coding: utf-8
 
 from __future__ import absolute_import
-from datetime import date, datetime  # noqa: F401
-
-from typing import List, Dict  # noqa: F401
 
 from swagger_server.models.base_model_ import Model
 from swagger_server import util
@@ -15,7 +12,8 @@ class Contact(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id: int=None, username: str=None, first_name: str=None, last_name: str=None, email: str=None, password: str=None, phone: str=None, user_status: int=None):  # noqa: E501
+    def __init__(self, id: int = None, username: str = None, first_name: str = None, last_name: str = None,
+                 email: str = None, password: str = None, phone: str = None, user_status: int = None):  # noqa: E501
         """Contact - a model defined in Swagger
 
         :param id: The id of this Contact.  # noqa: E501

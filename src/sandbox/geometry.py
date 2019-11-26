@@ -8,9 +8,7 @@ Created on Mon May  2 09:17:36 2016
 import numpy as np
 import matplotlib.pyplot as plt
 
-from mpl_toolkits.mplot3d import axes3d
 from matplotlib import cm
-from matplotlib.ticker import LinearLocator, FormatStrFormatter
 
 x1 = np.arange(-5, 5, 1)
 y1 = np.arange(-5, 5, 0.5)

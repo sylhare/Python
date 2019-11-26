@@ -1,8 +1,6 @@
 import connexion
-import six
 
 from swagger_server.models.contact import Contact  # noqa: E501
-from swagger_server import util
 
 
 def add_contact(body=None):  # noqa: E501

@@ -1,5 +1,6 @@
 from lettuce import *
 from nose.tools import assert_equals
+
 from ...app.calculator import Calculator
 
 
@@ -64,6 +65,3 @@ def check_number(step, expected):
     expected = int(expected)
     assert world.number == expected, \
         "Got %d" % world.number
-
-
-

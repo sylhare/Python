@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from matplotlib.widgets import Slider, Button, RadioButtons
 
 fig, ax = plt.subplots()

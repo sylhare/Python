@@ -3,8 +3,6 @@
 from __future__ import absolute_import
 
 from flask import json
-from six import BytesIO
-
 from swagger_server.models.contact import Contact  # noqa: E501
 from swagger_server.test import BaseTestCase
 
@@ -81,4 +79,5 @@ class TestContactController(BaseTestCase):
 
 if __name__ == '__main__':
     import unittest
+
     unittest.main()

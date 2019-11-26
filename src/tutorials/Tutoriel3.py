@@ -107,6 +107,7 @@ class MaClasse:
     """
 
     """
+
     def __init__(self):
         """On crée quelques attributs par défaut"""
         self.val = 1

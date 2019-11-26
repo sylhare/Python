@@ -1,9 +1,11 @@
-from ..app.raise_app import *
 import unittest
+
+from ..app.raise_app import *
 
 
 def lambda_raise_param():
     return lambda x: raise_if_None(x), None
+
 
 class TestRaise(unittest.TestCase):
 

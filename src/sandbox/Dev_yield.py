@@ -133,6 +133,6 @@ if __name__ == "__main__":
         print("StopIteration stopped because of crisis even after crisis")
 
     brand_new_atm = hsbc.create_atm()  # Build a new one to get back in business
-    for cash in brand_new_atm:         # infinite loop
+    for cash in brand_new_atm:  # infinite loop
         print(cash)
         break

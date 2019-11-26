@@ -11,8 +11,9 @@ To work with pytest:
       python -m pytest --cov=app --cov-report=term
 """
 
-from ..app.calculator_pytest import Calculator
 import pytest
+
+from ..app.calculator_pytest import Calculator
 
 # "Constants"
 

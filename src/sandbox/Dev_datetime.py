@@ -1,6 +1,5 @@
 from datetime import datetime
 
-
 if __name__ == "__main__":  # pragma: no cover
     """
     https://docs.python.org/3/library/datetime.html#datetime.datetime.strptime

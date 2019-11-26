@@ -73,8 +73,6 @@ def toggle_itertool():
     return itertools.cycle(value).__next__()
 
 
-import itertools
-
 # python 2
 # toggle = itertools.cycle(['red', 'green', 'blue']).next
 # python 3
