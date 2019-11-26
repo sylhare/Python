@@ -3,7 +3,7 @@ language: python
 sudo: false
 
 notifications:
-   email: false
+  email: false
 
 # Codacy and Code Climate token for coverage
 env:
@@ -30,7 +30,7 @@ install:
 
 # commands to run tests
 script:
-#  - python -m pytest -v
+  #  - python -m pytest -v
   - coverage run --source=. -m unittest discover
   - coverage report --omit="test*" -m # m are for missing lines not tested
   - coverage xml # For Codacy
@@ -39,6 +39,6 @@ after_success:
   - pip install charpy
   - pip install nprime
   - pip install simple-lda
- # - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT    # Code Climate code coverage
+  # - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT    # Code Climate code coverage
   - codecov                                                           # Codecov code coverage
   - python-codacy-coverage -r coverage.xml                            # Codacy code coverage
