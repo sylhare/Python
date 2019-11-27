@@ -33,3 +33,4 @@ build/
 /python.egg-info/
 .cache/*
 .pytest_cache/*
+src/tutorials/.ipynb_checkpoints/*
