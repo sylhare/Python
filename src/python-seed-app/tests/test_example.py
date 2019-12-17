@@ -16,3 +16,7 @@ class ParserTest(unittest.TestCase):
 
     def tearDown(self):
         print("Tear Down - After each Test\n")
+
+
+if __name__ == "__main__":
+    unittest.main()
