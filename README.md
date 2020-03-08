@@ -2,20 +2,28 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/79b0234d210c427f95285a15dc4f81e9)](https://www.codacy.com/app/Sylhare/Python_Projects?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Sylhare/Python_Projects&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/Sylhare/Python.svg?branch=master)](https://travis-ci.org/Sylhare/Python)
 
-## Intoduction 
+## Introduction 
 
-Some miscellaneous Python projects that I created or workd on. Mainly tests on some fonctionalities or exemple that I can reuse for other works as tutorials.
+Some miscellaneous Python projects that I created or worked on. Mainly tests on some functionality or example 
+that I can reuse for other works as tutorials.
 
 ### Installing Python
 
-There are currently two versions of python currently in use, I would suggest going with the latest Python 3 (3.x.x) because it is the future but there's no wrong choice here and you can switch from one to the other easily.
+There are currently two versions of python currently in use, 
+I would suggest going with the latest Python 3 (3.x.x) 
+because it is the future but there's no wrong choice here 
+and you can switch from one to the other easily.
 
-The [Anaconda](https://www.anaconda.com/) distribution is the easiest way to get you started with python, it comes with built in package, IDE and a lot of great stuffs.
+The [Anaconda](https://www.anaconda.com/) distribution is the easiest way to get you started with python, 
+it comes with built in package, IDE and a lot of great stuffs.
 
  - Download [Anaconda](https://www.anaconda.com/download/)
 
-You can also do it the classic way, by downloading pyhton directly from there website [here](https://www.python.org/downloads/) and then start coding on a text editor. </br>
-Python should have already been installed if you're using a linux distribution. You can always check which version is intalled:
+You can also do it the classic way, 
+by downloading python directly from there website [here](https://www.python.org/downloads/) and then start coding on a text editor.
+
+Python should have already been installed if you're using a linux distribution. 
+You can always check which version is installed:
 
 ```bash
 python --version
@@ -34,25 +42,25 @@ python
 Install dependencies via pip on a command prompt:
 
 ```bash
-python -m pip install package
+python -m pip install <package>
 ```
    
 Uninstall with pip through:
 
 ```bash
-python -m pip uninstall package
+python -m pip uninstall <package>
 ```
 
 Install dependencies through a proxy
 
 ```bash
-python -m pip install --proxy http://user:password@proxyserver:port package
+python -m pip install --proxy http://user:password@proxyserver:port <package>
 ```
 
 - Replace Package by the *package* you want to install
 - the `-m` means module
 - user and password are the ones you use to connect to your session (most probably)
--  The proxyserver and port are in 
+-  The proxy server and port are in 
 	-  Control Panel > Internet Options > Connections > Lan Settings button
 
 Run a python script on a command prompt (windows):
@@ -66,63 +74,13 @@ python.exe script.py arg1
 A Python package is simply an organized collection of python modules. A python module is simply a single python file.
 
 To create a python package, create a directory and then add a `__init__.py` file. 
-Creating a package with `__init__.py` is all about making it easier to develop large Python projects. It provides an easy way for you to group large folders of many seperate python scripts into a single importable module.
-
-
-### Upload to Pypi
+Creating a package with `__init__.py` is all about making it easier to develop large Python projects. 
+It provides an easy way for you to group large folders of many separate python scripts into a single importable module.
 
 [PyPI](https://pypi.org/) is the Python Package Index a repository of software for the Python programming language. 
-To upload your project you will need:
+You can find a seed template at [sylhare/python-seed](https://github.com/sylhare/pyhon-seed)
 
-- Create an account on Pypi
-- Structure your code:
-    
-```bash
-package-name             # Root repository folder
-├── package-name
-|   ├── __init__.py	     # To make a python directory, for imports                           
-|   └── module.py	     # Module of the package	  
-├── tests
-|   ├── __init__.py	     
-|   └── test.py          # Tests of the module
-└── setup.py
-```
-
-- Create a `setup.py` usign the [guidelines on how to package and distribute your project](https://packaging.python.org/tutorials/distributing-packages/).
-
-```python
-from setuptools import setup
-
-setup(name='package-name',
-      version='0.1',
-      description='Package description',
-      url='http://link.to.the.source.code',
-      author='name',
-      author_email='name@example.com',
-      license='MIT',
-      packages=['package-name'],
-      zip_safe=False)
-```
-    
-- Package your project into a `.tar`:
-
-```bash
-python setup.py sdist
-```
-    
-- Download and install `twine` which will allow you to safely upload your project
-
-```bash
-pip install twine
-```
-    
-- Upload your project
-
-```bash
-python -m twine upload dist/*
-```
-
-> When you upload your project, it might be refused due to naming problem. If that's the case you will have to rename your project.
+Read more about [Publish a pyhton package](https://sylhare.github.io/2018/01/12/Publish-a-python-package.html)
 
 ### Create a webserver in Python
 
