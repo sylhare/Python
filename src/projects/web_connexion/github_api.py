@@ -1,6 +1,7 @@
 # https://github.com/do-community/python3_web_api_tutorial
 # https://github.com/PyGithub/PyGithub
 import json
+
 import requests
 
 api_url_base = 'https://api.github.com/'

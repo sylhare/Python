@@ -5,9 +5,8 @@ Created on Mon May  2 09:17:36 2016
 @author: sylhare
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
-
+import numpy as np
 from matplotlib import cm
 
 x1 = np.arange(-5, 5, 1)

@@ -1,5 +1,6 @@
-import mock
 import sys
+
+import mock
 
 if __name__ == '__main__':
 

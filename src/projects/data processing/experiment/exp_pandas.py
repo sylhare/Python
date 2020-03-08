@@ -8,10 +8,11 @@ https://www.dataquest.io/blog/pandas-cheat-sheet/
 
 """
 
+from datetime import datetime
+
 import numpy as np
 import pandas
 import pandas as pd
-from datetime import datetime
 
 
 def println(string):
