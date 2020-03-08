@@ -28,7 +28,7 @@ class Car:
         return self.odometer / self.time
 
 
-if __name__ == '__main__':
+def drive():
     my_car = Car()
     print("I'm a car!")
     while True:
@@ -47,3 +47,7 @@ if __name__ == '__main__':
             print("The car's average speed was {} kph".format(my_car.average_speed()))
         my_car.step()
         my_car.say_state()
+
+
+if __name__ == '__main__':
+    drive()
