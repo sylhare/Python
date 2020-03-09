@@ -176,7 +176,7 @@ class Magic(object):
         print("abracada " + word)
 
 
-class Cat(Animal):
+class Cat(object, Animal):
     """
     SubClass of Animal
     Inheriting its method
@@ -185,7 +185,7 @@ class Cat(Animal):
     """
 
     def __init__(self, name, color):
-        super().__init__(self, name, color)
+        super(object).__init__(self, name, color)
 
     @staticmethod
     def purr():
