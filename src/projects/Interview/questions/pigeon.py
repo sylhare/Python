@@ -29,9 +29,19 @@ def variable_check(numbers):
             seen.append(number)
 
 
+def variable_set_check(numbers):
+    """
+    Same as above, using a set instead
+    """
+    seen = set()
+    for number in numbers:
+        if number in seen or seen.add(number):
+            return number
+
+
 def floyd_cycle_check(numbers):
     """
-    works because len(array) = n with for any x: array[x] <= n
+    works because len(array) = n + 1 with for any x: array[x] <= n
     hence it can be considered as a linked list with a loop or cycle
     when tortoise and hare meets,
     hare has traveled twice the distance of tortoise
@@ -56,3 +66,24 @@ def floyd_cycle_check(numbers):
         from_meeting = numbers[from_meeting]
 
     return from_meeting
+
+
+def collection_check(numbers):
+    """
+    Using the collection package which returns an object containing
+    the element and the amount of time it was seen
+    """
+    import collections
+    for number, count in collections.Counter(numbers).items():
+        if count > 1:
+            return number
+
+
+def enumerate_check(numbers):
+    """
+    Using enumerate which returns an object containing
+    a number and the count from the start.
+    """
+    for count, number in enumerate(numbers):
+        if number in numbers[:count]:
+            return number

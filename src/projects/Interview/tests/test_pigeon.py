@@ -27,7 +27,7 @@ def verify_pigeon_hole(your_algorithm):
             self.assertEqual(2, your_algorithm([1, 3, 4, 2, 2]))
 
         def test_example_2(self):
-            self.assertEqual(1, your_algorithm([1, 3, 2, 1, 2]))
+            self.assertEqual(1, your_algorithm([1, 3, 4, 1, 2]))
 
         def test_example_3(self):
             self.assertEqual(3, your_algorithm([1, 3, 4, 3, 2, 3, 6]))
@@ -53,6 +53,18 @@ class TestB(verify_pigeon_hole(variable_check)):
 
 
 class TestC(verify_pigeon_hole(floyd_cycle_check)):
+    pass
+
+
+class TestD(verify_pigeon_hole(collection_check)):
+    pass
+
+
+class TestE(verify_pigeon_hole(enumerate_check)):
+    pass
+
+
+class TestF(verify_pigeon_hole(variable_set_check)):
     pass
 
 
