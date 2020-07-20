@@ -87,3 +87,4 @@ def enumerate_check(numbers):
     for count, number in enumerate(numbers):
         if number in numbers[:count]:
             return number
+
