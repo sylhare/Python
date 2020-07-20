@@ -1,0 +1,5 @@
+requests
+gevent==1.4.0
+locustio==0.11.0
+pytest
+pytest-cov
