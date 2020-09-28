@@ -7,14 +7,6 @@ import os
 import pickle  # Pour enregistrer et récupèrer des fichiers
 from os.path import dirname, abspath
 
-from ..tutorials import Tutoriel
-from ..tutorials.Tutoriel import f  # Importe la fonction f() deTutoriel
-
-# Test des imports
-Tutoriel.table(5)  # Appel la fonction
-print(Tutoriel.tronc3(3.999998978))
-print(f(4))
-
 # Accèder au dossier o`sont les fichiers pyhton
 os.chdir("C:/Users/sylvain.hareng1/Documents/Python Scripts")  # On met '/' ou '//' et non '\'
 os.getcwd()  # get CWD : Current Working Directroy

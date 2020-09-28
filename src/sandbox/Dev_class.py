@@ -189,9 +189,7 @@ class Cat(object, Animal):
 
     @staticmethod
     def purr():
-        """
-
-        """
+        """PURR"""
         print("Purr...")
 
 
@@ -203,9 +201,7 @@ class Dog(Animal):
 
     @staticmethod
     def bark():
-        """
-
-        """
+        """Woof"""
         print("Woof!")
 
 
@@ -217,9 +213,7 @@ class Bird(Animal, Magic):
 
     @staticmethod
     def tweet():
-        """
-
-        """
+        """Piip"""
         print("piiip")
 
 
