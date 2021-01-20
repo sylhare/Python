@@ -1,7 +1,7 @@
 import unittest
 
 
-class RandomTest(unittest.TestCase):
+class TemplateTest(unittest.TestCase):
 
     def setUp(self):
         """Initialisation des tests."""
