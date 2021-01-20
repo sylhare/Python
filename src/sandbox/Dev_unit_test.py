@@ -42,5 +42,8 @@ class RandomTest(unittest.TestCase):
             random.sample(self.liste, 20)  # Fail for something <= 10
 
 
-unittest.main()  # Pour lancer le test "." si validé, "F" si pas bonne valeur obtenue, "E" si obtenue une erreur. Plus récapitulatif du nombre de tests
-# python.exe -m unittest #To run the tests
+if __name__ == "__main__":
+    unittest.main()
+    # Pour lancer le test "." si validé, "F" si pas bonne valeur obtenue, "E" si obtenue une erreur.
+    # Plus récapitulatif du nombre de tests
+    # python.exe -m unittest #To run the tests
