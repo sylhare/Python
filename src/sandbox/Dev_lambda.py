@@ -3,6 +3,7 @@
 Tests sur les lambdas python 3
 
 """
+import os
 
 
 def lambda_simple():
@@ -135,6 +136,15 @@ def lambda_in_a_map_and_a_dict():
     print(list(d_s))
 
 
+def strip_inline_lambda():
+    languages = "French, English, Spanish"
+    split = ({x.strip() for x in languages.split(",")} if languages else None)
+    print(split)
+    empty_variable = os.getenv("NOTHING")
+    split = ({x.strip() for x in empty_variable.split(",")} if empty_variable else {'English'})
+    print(split)
+
+
 if __name__ == "__main__":
     lambda_simple()
     lambda_dictionary()
@@ -142,3 +152,4 @@ if __name__ == "__main__":
     lambda_multiple_variable()
     zip_instead()
     zip_demo()
+    strip_inline_lambda()
