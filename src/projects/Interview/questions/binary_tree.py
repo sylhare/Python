@@ -3,6 +3,7 @@
 Ordered binary tree (aka binary search tree):
  - each left child node is less than its parent node's value
  - each right child node is greater than its parent node's value.
+ - No duplicate values
 
 """
 
@@ -58,11 +59,37 @@ class BinarySearchTree:
 def inOrder(node):
     if node is not None:
         inOrder(node.left)
-        print(node.value, end="")
+        print(node.value, end=" ")
         inOrder(node.right)
 
 
+def preOrder(node):
+    if node is not None:
+        print(node.value, end=" ")
+        inOrder(node.left)
+        inOrder(node.right)
+
+
+def postOrder(node):
+    if node is not None:
+        inOrder(node.left)
+        inOrder(node.right)
+        print(node.value, end=" ")
+
+
+def levelOrder(root):
+    queue = [root]
+    while len(queue):
+        current = queue.pop(0)
+        print(current.info, end=" ")
+        if current.left:
+            queue.append(current.left)
+        if current.right:
+            queue.append(current.right)
+
+
 def deserialize_tree(serialized_tree):
+    print(serialized_tree, end="\t\t-> ")
     tree = BinarySearchTree()
 
     arr = list(map(int, serialized_tree.split()))
@@ -75,5 +102,19 @@ def deserialize_tree(serialized_tree):
 
 if __name__ == "__main__":
     import sys
+
     print(sys.version)
     inOrder(deserialize_tree("1 2 5 3 4 6").root)
+    print()
+    inOrder(deserialize_tree("2 1 3 4 5").root)
+    print()
+    inOrder(deserialize_tree("6 2 5 3 8 1 9").root)
+    print()
+    inOrder(deserialize_tree("5 1 3 6 2 4").root)
+    print()
+    inOrder(deserialize_tree("5 1 6 2 4 3").root)
+    print()
+    inOrder(deserialize_tree("33 21 20 35 34 54").root)
+    print()
+    inOrder(deserialize_tree("12 6 6 5 4 2 6 2 12 3").root)
+    print()
