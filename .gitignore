@@ -35,3 +35,4 @@ build/
 .pytest_cache/*
 src/tutorials/.ipynb_checkpoints/*
 src/projects/Interview/tests/test.py
+src/projects/Interview/questions/test3.py
