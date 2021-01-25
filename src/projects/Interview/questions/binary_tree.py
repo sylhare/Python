@@ -88,6 +88,15 @@ def levelOrder(root):
             queue.append(current.right)
 
 
+def height(root, right=0, left=0):
+    if root.left:
+        left = height(root.left) + 1
+    if root.right:
+        right = height(root.right) + 1
+
+    return max(left, right)
+
+
 def deserialize_tree(serialized_tree):
     print(serialized_tree, end="\t\t-> ")
     tree = BinarySearchTree()
