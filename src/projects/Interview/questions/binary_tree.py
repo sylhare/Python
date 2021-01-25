@@ -77,24 +77,55 @@ def postOrder(node):
         print(node.value, end=" ")
 
 
-def levelOrder(root):
-    queue = [root]
+def levelOrder(node):
+    queue = [node]
     while len(queue):
         current = queue.pop(0)
-        print(current.info, end=" ")
+        print(current.value, end=" ")
         if current.left:
             queue.append(current.left)
         if current.right:
             queue.append(current.right)
 
 
-def height(root, right=0, left=0):
-    if root.left:
-        left = height(root.left) + 1
-    if root.right:
-        right = height(root.right) + 1
+def height(node, right=0, left=0):
+    if node.left:
+        left = height(node.left) + 1
+    if node.right:
+        right = height(node.right) + 1
 
     return max(left, right)
+
+
+def topViewRecursive(root):
+    result = topNodes(root)
+    for i in sorted(result.keys()):
+        print(result[i]["info"], end=" ")
+
+
+def topNodes(root, x=0, y=0, result={}):
+    if result.get(x) is None or result[x]["y"] > y:
+        result[x] = {"y": y, "info": root.info}
+    if root.left:
+        result = topNodes(root.left, x - 1, y + 1, result)
+    if root.right:
+        result = topNodes(root.right, x + 1, y + 1, result)
+    return result
+
+
+def topView(root, y=0, result={}):
+    queue = [(root, 0)]
+
+    for node, x in queue:
+        if result.get(x) is None or result[x][1] > y:
+            result[x] = (node.info, y)
+        if node.left:
+            queue.extend([(node.left, x - 1)])
+        if node.right:
+            queue.extend([(node.right, x + 1)])
+        y += 1
+
+    [print(result[i][0], end=" ") for i in sorted(result.keys())]
 
 
 def deserialize_tree(serialized_tree):
