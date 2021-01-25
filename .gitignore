@@ -36,3 +36,4 @@ build/
 src/tutorials/.ipynb_checkpoints/*
 src/projects/Interview/tests/test.py
 src/projects/Interview/questions/test3.py
+src/projects/Interview/tests/test_api_call.py
