@@ -24,6 +24,12 @@ class Node:
     def __str__(self):
         return str(self.value)
 
+    def height(self, node):
+        if node is None:
+            return -1
+
+        return 1 + max(self.height(node.left), self.height(node.right))
+
 
 class BinarySearchTree:
     def __init__(self):
