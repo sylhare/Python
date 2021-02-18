@@ -145,6 +145,25 @@ def strip_inline_lambda():
     print(split)
 
 
+class Difference:
+    def __init__(self, list_of_numbers):
+        self.__elements = list_of_numbers
+        self.maximum_difference = 0
+
+    def compute_difference_fancy(self):
+        """
+        :return: maximum difference between absolute of all possible subtraction between elements in the list
+        """
+        import itertools
+        from functools import reduce
+        combinations = list(itertools.combinations(self.__elements, 2))
+        differences = list(map(lambda e: abs(e[0] - e[1]), combinations))
+        self.maximum_difference = reduce(lambda a, b: a if a > b else b, differences)
+
+    def compute_difference(self):
+        self.maximum_difference = max(self.__elements) - min(self.__elements)
+
+
 if __name__ == "__main__":
     lambda_simple()
     lambda_dictionary()
