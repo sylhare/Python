@@ -72,14 +72,14 @@ def inOrder(node):
 def preOrder(node):
     if node is not None:
         print(node.value, end=" ")
-        inOrder(node.left)
-        inOrder(node.right)
+        preOrder(node.left)
+        preOrder(node.right)
 
 
 def postOrder(node):
     if node is not None:
-        inOrder(node.left)
-        inOrder(node.right)
+        postOrder(node.left)
+        postOrder(node.right)
         print(node.value, end=" ")
 
 
