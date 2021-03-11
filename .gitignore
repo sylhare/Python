@@ -7,7 +7,14 @@ ehthumbs.db
 
 # Python file
 *.pyc
-src/test framework/tdd/venv/**
+**/venv/
+**/.cache/
+**/.idea/
+**/.coverage
+**/dist/
+**/python.egg-info/
+**/.pytest_cache/*
+**/.ipynb_checkpoints/*
 .coverage
 
 # Folder config file
@@ -21,19 +28,3 @@ Desktop.ini
 # Windows shortcuts
 *.lnk
 build/
-
-/src/projects/test_framework/tdd/venv/
-/src/projects/test_framework/tdd/.cache/
-/src/projects/test_framework/tdd/.idea/
-/src/projects/test_framework/bdd/.idea/
-/src/projects/test_framework/tdd/.coverage
-/src/projects/web_connexion/.idea/
-/src/projects/test_framework/tdd/tests/.coverage
-/dist/
-/python.egg-info/
-.cache/*
-.pytest_cache/*
-src/tutorials/.ipynb_checkpoints/*
-src/projects/Interview/tests/test.py
-src/projects/Interview/questions/test3.py
-src/projects/Interview/tests/test_api_call.py
