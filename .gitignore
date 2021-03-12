@@ -16,6 +16,7 @@ ehthumbs.db
 **/.pytest_cache/*
 **/.ipynb_checkpoints/*
 .coverage
+**/build/
 
 # Folder config file
 Desktop.ini

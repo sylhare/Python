@@ -9,26 +9,6 @@ import time
 from threading import Thread, RLock
 
 
-# ==============================================================================
-# os.getcwd() 
-# file = open("newfile.txt", "w")
-# file.write('\n'+"hello world in the new file")
-# file.write('\n'+"and another line")
-# 
-# file = open('newfile.txt', 'r')
-# print (file.read())
-# #file.read(number of character to read)
-# #file.readline(line to print)
-# #file.readlines() give back an array with the data
-# file.close()
-# 
-# ==============================================================================
-
-## Multi Threading
-# print("Avant le sleep...")
-# time.sleep(5) #Met en pause le programe
-# print("Après le sleep.")
-
 class Afficheur(Thread):
     """Thread chargé simplement d'afficher une lettre dans la console."""
 
