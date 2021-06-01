@@ -102,5 +102,4 @@ Feature: As a person for curiosity's sake        # tests/features/calculator.fea
 1 feature (1 passed)
 1 scenario (1 passed)
 2 steps (2 passed)
-
 ```

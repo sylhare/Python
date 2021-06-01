@@ -37,7 +37,7 @@ python test/test_calculator.py
 
 ### Nose
 
-Nose auto detects unit test, by there name starting with `test_`.
+Nose auto-detects unit test, by there name starting with `test_`.
 Using nosetests to execute tests:
 ```
 nosetests test/test_calculator.py
@@ -56,7 +56,7 @@ py.test test/test_calculator.py
 ## Debugging
 
 You can add some print  statements in your code to see what is happening and better debug your code.
-But sometime, it is not enough and you can use the `pdb` (Python Debugger).
+But sometime, it is not enough, and you can use the `pdb` (Python Debugger).
 The tool is included in the standard library.
 
 Use `import pdb; pdb.set_trace()` in your code.
