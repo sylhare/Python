@@ -16,7 +16,7 @@ def functional_brute_force_check(array, target):
     """
     One liner
     """
-    return len(filter(lambda x: x, [target - array[i] in array[i + 1:] for i in range(0, len(array) - 1)])) > 0
+    return len(list(filter(lambda x: x, [target - array[i] in array[i + 1:] for i in range(0, len(array) - 1)]))) > 0
 
 
 def variable_check(array, target):
