@@ -4,10 +4,8 @@ matplotlib
 requests
 setuptools
 lettuce
-pytest==2.9.2
+pytest
+pytest-cov
 nose
-coverage==4.1
-codecov
-codacy-coverage
 nprime
 charpy

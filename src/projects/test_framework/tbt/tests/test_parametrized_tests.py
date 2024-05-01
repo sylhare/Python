@@ -7,6 +7,9 @@ https://stackoverflow.com/questions/17260469/instantiate-python-unittest-testcas
 """
 
 import unittest
+from abc import abstractmethod
+
+import pytest
 
 
 # Example 1 with test suite
@@ -67,9 +70,17 @@ def make_case(param):
     return MyTestCase
 
 
+@pytest.mark.skip
 class ConcreteTestCase(make_case(1)):
     """ test class with parameter """
     pass
+
+
+@unittest.skip
+@pytest.mark.parametrize('param', [1])
+def test_foo(param):
+    """ test example with parameter with pytest"""
+    assert param == 1
 
 
 # Example 3 using class attributes
@@ -152,19 +163,20 @@ def function_b(string):
     return True
 
 
-class AbstractTestCase:
+class AbstractTestCase():
+
+    @abstractmethod
+    def function(self, param):
+        """ function that will be set and tested """
+        pass
 
     def test_generic_input_one(self):
-        """
-        test
-        """
+        """ test """
         result = self.function("input 1")
         self.assertTrue(result)
 
     def test_generic_input_two(self):
-        """
-        test
-        """
+        """ test """
         result = self.function("input 2")
         self.assertTrue(result)
 

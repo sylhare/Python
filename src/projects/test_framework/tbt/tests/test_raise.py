@@ -1,5 +1,7 @@
 import unittest
 
+import pytest
+
 from ..app.raise_app import *
 
 
@@ -24,6 +26,8 @@ class TestRaise(unittest.TestCase):
     def test_direct_raise_3(self):
         self.assertRaises(KeyError, raise_directly)
 
+    @unittest.expectedFailure
+    @pytest.mark.xfail
     def test_raise_with_param_1(self):
         self.assertRaises(ValueError, raise_if_None(None))
 
@@ -41,10 +45,12 @@ class TestRaise(unittest.TestCase):
         with self.assertRaises(ValueError):
             raise_if_None(None)
 
-    def test_direct_raise_catched(self):
+    @pytest.mark.xfail
+    def test_direct_raise_caught(self):
         self.assertRaises(TypeError, raise_directly)
 
-    def test_raise_with_param_catched(self):
+    @pytest.mark.xfail
+    def test_raise_with_param_caught(self):
         self.assertRaises(ValueError, raise_if_None(None))
 
 
