@@ -6,6 +6,7 @@ setuptools
 lettuce
 pytest
 pytest-cov
+pylint
 nose
 nprime
 charpy
