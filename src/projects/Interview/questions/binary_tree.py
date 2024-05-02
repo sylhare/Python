@@ -62,28 +62,28 @@ class BinarySearchTree:
                     break
 
 
-def inOrder(node):
+def in_order(node):
     if node is not None:
-        inOrder(node.left)
+        in_order(node.left)
         print(node.value, end=" ")
-        inOrder(node.right)
+        in_order(node.right)
 
 
-def preOrder(node):
+def pre_order(node):
     if node is not None:
         print(node.value, end=" ")
-        preOrder(node.left)
-        preOrder(node.right)
+        pre_order(node.left)
+        pre_order(node.right)
 
 
-def postOrder(node):
+def post_order(node):
     if node is not None:
-        postOrder(node.left)
-        postOrder(node.right)
+        post_order(node.left)
+        post_order(node.right)
         print(node.value, end=" ")
 
 
-def levelOrder(node):
+def level_order(node):
     queue = [node]
     while len(queue):
         current = queue.pop(0)
@@ -103,28 +103,28 @@ def height(node, right=0, left=0):
     return max(left, right)
 
 
-def topViewRecursive(root):
-    result = topNodes(root)
+def top_view_recursive(root):
+    result = top_nodes(root)
     for i in sorted(result.keys()):
         print(result[i]["info"], end=" ")
 
 
-def topNodes(root, x=0, y=0, result={}):
+def top_nodes(root, x=0, y=0, result={}):
     if result.get(x) is None or result[x]["y"] > y:
-        result[x] = {"y": y, "info": root.info}
+        result[x] = {"y": y, "info": root.value}
     if root.left:
-        result = topNodes(root.left, x - 1, y + 1, result)
+        result = top_nodes(root.left, x - 1, y + 1, result)
     if root.right:
-        result = topNodes(root.right, x + 1, y + 1, result)
+        result = top_nodes(root.right, x + 1, y + 1, result)
     return result
 
 
-def topView(root, y=0, result={}):
+def top_view(root, y=0, result={}):
     queue = [(root, 0)]
 
     for node, x in queue:
         if result.get(x) is None or result[x][1] > y:
-            result[x] = (node.info, y)
+            result[x] = (node.value, y)
         if node.left:
             queue.extend([(node.left, x - 1)])
         if node.right:
@@ -150,17 +150,5 @@ if __name__ == "__main__":
     import sys
 
     print(sys.version)
-    inOrder(deserialize_tree("1 2 5 3 4 6").root)
-    print()
-    inOrder(deserialize_tree("2 1 3 4 5").root)
-    print()
-    inOrder(deserialize_tree("6 2 5 3 8 1 9").root)
-    print()
-    inOrder(deserialize_tree("5 1 3 6 2 4").root)
-    print()
-    inOrder(deserialize_tree("5 1 6 2 4 3").root)
-    print()
-    inOrder(deserialize_tree("33 21 20 35 34 54").root)
-    print()
-    inOrder(deserialize_tree("12 6 6 5 4 2 6 2 12 3").root)
+    in_order(deserialize_tree("1 2 5 3 4 6").root)
     print()
