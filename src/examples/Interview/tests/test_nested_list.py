@@ -8,7 +8,7 @@ import datetime
 import re
 import unittest
 
-from src.projects.Interview.questions.nested_list import get_record_info, flatten
+from src.examples.Interview.questions.nested_list import get_record_info, flatten
 
 
 class NestedListTestCase(unittest.TestCase):

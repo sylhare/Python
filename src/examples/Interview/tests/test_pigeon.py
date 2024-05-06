@@ -6,7 +6,7 @@ Prove that there is at least one duplicate number exists.
 (Pigeon Hole principle: https://en.wikipedia.org/wiki/Pigeonhole_principle)
 
 There's only one number that has duplicates,
-Also that number can have more than 1 duplicates.
+Also that number can have more than 1 duplicate.
 """
 import datetime
 import re

@@ -1,6 +1,6 @@
 import pytest
 
-from src.projects.Interview.questions.binary_tree import in_order, deserialize_tree, height, level_order, post_order, \
+from src.examples.Interview.questions.binary_tree import in_order, deserialize_tree, height, level_order, post_order, \
     top_view, top_view_recursive, pre_order
 
 

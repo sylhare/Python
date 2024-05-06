@@ -1,4 +1,4 @@
-from src.projects.examples.src.decorator import handle_error, hello
+from src.examples.snippet.src.decorator import handle_error, hello
 
 
 def test_handle_error_decorator():
