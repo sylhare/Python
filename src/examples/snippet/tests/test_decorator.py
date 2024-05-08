@@ -1,4 +1,4 @@
-from src.examples.snippet.src.decorator import handle_error, hello, decorator
+from src.examples.snippet.src.decorator import handle_error, hello, decorator, decorator_maker
 
 
 def test_handle_error_decorator():
@@ -43,3 +43,11 @@ def test_stacked():
 def test_decorated_lambda():
     function = decorator(lambda string: string)
     assert function("lambda") == "decorated lambda"
+
+
+def test_decorator_with_argument():
+    @decorator_maker("decorated")
+    def function(arg: str) -> str:
+        return "output from " + arg
+
+    assert function("function") == "decorated output from function"

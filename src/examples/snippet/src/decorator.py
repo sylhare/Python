@@ -26,3 +26,13 @@ def decorator(func):
         return "decorated " + func(arg)
 
     return wrapper
+
+
+def decorator_maker(prefix: str):
+    def generated_decorator(func):
+        def wrapper(arg: str) -> str:
+            return prefix + " " + func(arg)
+
+        return wrapper
+
+    return generated_decorator
