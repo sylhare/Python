@@ -1,4 +1,4 @@
-from src.examples.snippet.src.decorator import handle_error, hello
+from src.examples.snippet.src.decorator import handle_error, hello, decorator
 
 
 def test_handle_error_decorator():
@@ -20,3 +20,11 @@ def test_hello():
         return "world"
 
     assert world() == "hello world: 🌈"
+
+
+def test_decorator():
+    @decorator
+    def function(input: str) -> str:
+        return "output from " + input
+
+    assert function("function") == "output from function"
