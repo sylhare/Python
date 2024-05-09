@@ -27,7 +27,7 @@ def test_decorator():
     def function(input: str) -> str:
         return "output from " + input
 
-    assert function("function") == "output from function"
+    assert function("function") == "decorated output from function"
 
 
 def test_stacked():
