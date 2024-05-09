@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='python',
-      version='3.6.0',
+      version='3.10.0',
       description='Experiments on python',
       classifiers=[
           'Development Status :: 3 - Alpha',
