@@ -1,6 +1,7 @@
 from src.projects.hanafuda.Deck import Deck
 
-
+# Calculation of score may change with rules and yakus.
+# This is not very accurate, doesn't account for negative scoring.
 def calculate_score(cards):
     score = 0
     for card in cards:
