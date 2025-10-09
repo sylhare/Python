@@ -27,7 +27,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install flake8 pytest
+        # Install root requirements
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        # Install project-specific requirements
+        find . -name "requirements.txt" -not -path "./requirements.txt" -exec pip install -r {} \;
+        # Install pyproject.toml dependencies where available
+        find . -name "pyproject.toml" -execdir pip install -e . \;
     - name: Lint with flake8
       continue-on-error: true
       run: |
