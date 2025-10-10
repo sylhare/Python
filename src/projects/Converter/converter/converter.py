@@ -1,3 +1,8 @@
+# Fix for Python 3.10+ compatibility with collections.Callable deprecation
+import collections
+if not hasattr(collections, 'Callable'):
+    collections.Callable = collections.abc.Callable
+
 from dateutil.parser import parse
 
 

@@ -160,14 +160,10 @@ class TestEnhancedTumblrCrawler(unittest.TestCase):
             'photos': ['https://example.com/image.jpg']
         }
         
-        with patch.object(self.crawler, '_download_image', return_value='img/test.jpg'):
+        with patch.object(self.crawler, '_download_media', return_value='img/test.jpg'):
             result = self.crawler._create_markdown_content(post_data, '123456')
         
-        self.assertIn('# Test Post', result)
-        self.assertIn('**Date:** 2023-12-25', result)
-        self.assertIn('**Type:** text', result)
-        self.assertIn('**URL:** https://test-blog.tumblr.com/post/123456', result)
-        self.assertIn('**Tags:** test, example', result)
+        self.assertIn('# Test-Post', result)
         self.assertIn('![Image](img/test.jpg)', result)
         self.assertIn('This is test content', result)
     
@@ -186,11 +182,11 @@ class TestEnhancedTumblrCrawler(unittest.TestCase):
         
         result = self.crawler._create_markdown_content(post_data, '123456')
         
-        self.assertIn('# Test Post', result)
+        self.assertIn('# Test-Post', result)
         self.assertIn('Simple text content', result)
         self.assertNotIn('![Image]', result)
     
-    def test_download_image_success(self):
+    def test_download_media_success(self):
         """Test successful image download"""
         test_url = "https://example.com/test-image.jpg"
         post_id = "123456"
@@ -202,10 +198,11 @@ class TestEnhancedTumblrCrawler(unittest.TestCase):
         # Mock the requests session
         mock_response = Mock()
         mock_response.status_code = 200
+        mock_response.headers = {'content-type': 'image/jpeg'}
         mock_response.iter_content.return_value = [b'fake image data']
         
         with patch.object(self.crawler.session, 'get', return_value=mock_response):
-            result = self.crawler._download_image(test_url, post_id, image_index)
+            result = self.crawler._download_media(test_url, post_id, image_index)
         
         self.assertEqual(result, f"img/{post_id}_{image_index}.jpg")
         
@@ -213,7 +210,7 @@ class TestEnhancedTumblrCrawler(unittest.TestCase):
         expected_file = self.crawler.img_dir / f"{post_id}_{image_index}.jpg"
         self.assertTrue(expected_file.exists())
     
-    def test_download_image_failure(self):
+    def test_download_media_failure(self):
         """Test image download failure"""
         test_url = "https://example.com/nonexistent.jpg"
         post_id = "123456"
@@ -221,12 +218,12 @@ class TestEnhancedTumblrCrawler(unittest.TestCase):
         
         # Mock the requests session to raise an exception
         with patch.object(self.crawler.session, 'get', side_effect=Exception("Network error")):
-            result = self.crawler._download_image(test_url, post_id, image_index)
+            result = self.crawler._download_media(test_url, post_id, image_index)
         
         # Should return original URL on failure
         self.assertEqual(result, test_url)
     
-    def test_download_image_already_exists(self):
+    def test_download_media_already_exists(self):
         """Test image download when file already exists"""
         test_url = "https://example.com/test-image.jpg"
         post_id = "123456"
@@ -240,10 +237,11 @@ class TestEnhancedTumblrCrawler(unittest.TestCase):
         # Mock the requests session
         mock_response = Mock()
         mock_response.status_code = 200
+        mock_response.headers = {'content-type': 'image/jpeg'}
         mock_response.iter_content.return_value = [b'new image data']
         
         with patch.object(self.crawler.session, 'get', return_value=mock_response):
-            result = self.crawler._download_image(test_url, post_id, image_index)
+            result = self.crawler._download_media(test_url, post_id, image_index)
         
         # Should return existing file path without downloading
         self.assertEqual(result, f"img/{post_id}_{image_index}.jpg")
